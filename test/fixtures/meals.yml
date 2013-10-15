@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  calories: 1
+  protein: 1
+  carbohydrates: 1
+  fats: 1
+  start_time: 2013-10-15 17:27:47
+  end_time: 2013-10-15 17:27:47
+
+two:
+  calories: 1
+  protein: 1
+  carbohydrates: 1
+  fats: 1
+  start_time: 2013-10-15 17:27:47
+  end_time: 2013-10-15 17:27:47
