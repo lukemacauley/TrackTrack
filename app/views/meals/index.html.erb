@@ -1,5 +1,5 @@
 <section class="index">
-
+<% if user_signed_in? %>
 <h1>Track Track</h1>
 <h3><%= Date.today.strftime('%A, %d %B %Y') %></h3>
 
@@ -66,5 +66,8 @@
 
 <br>
 
-<%= link_to 'New Meal', new_meal_path %>
+<%= link_to 'New Meal', new_meal_path, data: { keybinding: 'n' } %>
+<% else %>
+Hello! Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to use this service.
+<% end %>
 </section>

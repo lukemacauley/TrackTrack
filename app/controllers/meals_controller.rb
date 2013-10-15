@@ -1,9 +1,9 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
 
   def index
-    @meals = current_user.meals
+    @meals = current_user.meals if user_signed_in?
   end
 
   def new
