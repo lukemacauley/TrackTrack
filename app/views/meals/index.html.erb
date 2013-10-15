@@ -3,13 +3,8 @@
 <h2><%= Date.today.strftime('%A, %d %B %Y') %></h2>
 
 <span>
-  <%# form_for(@bmr) do |f| %>
-    <%# f.text_field :bmr, placeholder: "Enter your BMR" %>
-    <%# f.submit "Save", remote: true %> How do I <%= link_to "calculate my BMR?", 'javascript:void(0)' %>
-  <%# end %>
+  <h4>Your BMR is: <%= link_to current_user.bmr, edit_user_registration_path %></h4>
 </span>
-
-<h4>Your BMR is: </h4>
 
 <hr>
 
@@ -36,7 +31,7 @@
         <td class="meal-list"><%= meal.carbohydrates %></td>
         <td class="meal-list"><%= meal.fats %></td>
         <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-        <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td></td>
       </tr>
     <% end %>
@@ -52,10 +47,10 @@
       </tr>
       <tr>
         <td class="remaining">Remaining:</td>
-        <td class="meal-list remaining"><%= 2500 - @meals.sum(:calories) %></td>
-        <td class="meal-list remaining"><%= (2500*0.4/4).to_i - @meals.sum(:protein) %></td>
-        <td class="meal-list remaining"><%= (2500*0.4/4).to_i - @meals.sum(:carbohydrates) %></td>
-        <td class="meal-list remaining"><%= (2500*0.2/9).to_i - @meals.sum(:fats) %></td>
+        <td class="meal-list remaining"><%= current_user.bmr - @meals.sum(:calories) %></td>
+        <td class="meal-list remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:protein) %></td>
+        <td class="meal-list remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:carbohydrates) %></td>
+        <td class="meal-list remaining"><%= (current_user.bmr*0.2/9).to_i - @meals.sum(:fats) %></td>
         <td></td>
         <td></td>
         <td></td>
@@ -65,7 +60,7 @@
 
 <br>
 
-<%= link_to 'New Meal', new_meal_path, data: { keybinding: 'n' } %>
+<%= link_to 'Add Meal', new_meal_path, data: { keybinding: 'n' } %>
 <% else %>
 Hello! Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to use this service.
 <% end %>

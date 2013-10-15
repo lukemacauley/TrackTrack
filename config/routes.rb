@@ -1,7 +1,7 @@
 Tracktrack::Application.routes.draw do
 
-  devise_for :users
-  resources :meals, except: :index
+  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification', unlock: 'unblock', registration: 'account', sign_up: 'new' }
+  resources :meals, only: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,6 +16,13 @@ Tracktrack::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+      get 'add' => 'meals#new', as: :new_meal
+      get ':id/edit' => 'meals#edit', as: :edit_meal
+      get ':id' => 'meals#show', as: :meal
+      patch ':id' => 'meals#update'
+      put ':id' => 'meals#update'
+      delete ':id' => 'meals#destroy'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

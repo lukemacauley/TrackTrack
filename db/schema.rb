@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015172850) do
+ActiveRecord::Schema.define(version: 20131015221405) do
 
   create_table "meals", force: true do |t|
     t.integer  "calories",      default: 0, null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20131015172850) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bmr"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
