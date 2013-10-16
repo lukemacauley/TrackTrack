@@ -7,11 +7,11 @@
 	  <div><%= f.label :email %><br />
 	  <%= f.email_field :email, :autofocus => true %></div>
 	
-	  <div>BMR<br />
-	  <%= f.number_field :bmr %></div>
-	
 	  <div><%= f.label :password %><br />
 	  <%= f.password_field :password %></div>
+
+	  <div>BMR<br />
+	  <%= f.text_field :bmr, placeholder: "You can add this in later" %></div>
 	
 	  <div><%= f.submit "Sign Up" %></div>
 	<% end %>

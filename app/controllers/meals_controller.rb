@@ -3,7 +3,8 @@ class MealsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @meals = current_user.meals if user_signed_in?
+    @todays_meals = current_user.meals.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day) if user_signed_in?
+    @previous_meals = current_user.meals.where("created_at < ?", Time.now.beginning_of_day) if user_signed_in?
   end
 
   def new

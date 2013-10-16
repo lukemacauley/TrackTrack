@@ -9,9 +9,9 @@
 <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
 
 <% if current_user.bmr.nil? %>
-  <h3><%= link_to "Please set your BMR", edit_user_registration_path %></h3>
+  <h3><%= link_to "Please set your BMR", account_bmr_path %></h3>
 <% else %>
-  <h3>Your BMR is: <%= link_to current_user.bmr, edit_user_registration_path %></h3>
+  <h3>Your BMR is: <%= link_to current_user.bmr, account_bmr_path %></h3>
 <% end %>
 
 <hr>
@@ -28,35 +28,35 @@
   </thead>
 
   <tbody>
-    <% @meals.each do |meal| %>
+    <% @todays_meals.each do |meal| %>
       <tr class= "value">
-        <td><%= link_to meal.name, edit_meal_path(meal) %></td>
-        <td><%= meal.calories %></td>
-        <td><%= meal.protein %></td>
-        <td><%= meal.carbohydrates %></td>
-        <td><%= meal.fats %></td>
+          <td><%= link_to meal.name, edit_meal_path(meal) %></td>
+          <td><%= meal.calories %></td>
+          <td><%= meal.protein %></td>
+          <td><%= meal.carbohydrates %></td>
+          <td><%= meal.fats %></td>
       </tr>
     <% end %>
       <tr>
         <td class="meal-total">Total:</td>
-        <td class="meal-total"><%= @meals.sum(:calories) %></td>
-        <td class="meal-total"><%= @meals.sum(:protein) %></td>
-        <td class="meal-total"><%= @meals.sum(:carbohydrates) %></td>
-        <td class="meal-total"><%= @meals.sum(:fats) %></td>
+        <td class="meal-total"><%= @todays_meals.sum(:calories) %></td>
+        <td class="meal-total"><%= @todays_meals.sum(:protein) %></td>
+        <td class="meal-total"><%= @todays_meals.sum(:carbohydrates) %></td>
+        <td class="meal-total"><%= @todays_meals.sum(:fats) %></td>
       </tr>
       <% unless current_user.bmr.nil? %>
-      <tr class="remaining">
-        <td class="meal-remaining">Remaining:</td>
-        <td class="meal-remaining"><%= current_user.bmr - @meals.sum(:calories) %></td>
-        <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:protein) %></td>
-        <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:carbohydrates) %></td>
-        <td class="meal-remaining"><%= (current_user.bmr*0.2/9).to_i - @meals.sum(:fats) %></td>
-      </tr>
+        <tr class="remaining">
+          <td class="meal-remaining">Remaining:</td>
+          <td class="meal-remaining"><%= current_user.bmr - @todays_meals.sum(:calories) %></td>
+          <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @todays_meals.sum(:protein) %></td>
+          <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @todays_meals.sum(:carbohydrates) %></td>
+          <td class="meal-remaining"><%= (current_user.bmr*0.2/9).to_i - @todays_meals.sum(:fats) %></td>
+        </tr>
       <% end %>
   </tbody>
 </table>
 
-<div class="add"><%= link_to "Add Meal", new_meal_path %></div>
+<div class="add"><%= link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></div>
 
 <% else %>
 

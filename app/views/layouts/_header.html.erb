@@ -3,7 +3,7 @@
 		<ul>
 			<li><%= link_to "Track Track", root_path, data: { keybinding: 'h' } %></li>
 		<% if user_signed_in? %>
-			<li><%= link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></li>
+			<li><%# link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></li>
 		</ul>
 		<ul class="profile">
 			<li><%= link_to "Profile", 'javascript:void(0)' %>

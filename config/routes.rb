@@ -14,6 +14,8 @@ Tracktrack::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+      get 'faq' => 'pages#faq'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -26,6 +28,10 @@ Tracktrack::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+      devise_scope :user do 
+        get "account/bmr" => "devise/registrations#bmr"
+      end
 
   # Example resource route with options:
   #   resources :products do
