@@ -9,9 +9,9 @@
 <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
 
 <% if current_user.bmr.nil? %>
-  <h3><%= link_to "Please set your BMR", account_bmr_path %></h3>
+  <h3><%= link_to "Please set your BMR", account_bmr_path, data: { keybinding: 'b' } %></h3>
 <% else %>
-  <h3>Your BMR is: <%= link_to current_user.bmr, account_bmr_path %></h3>
+  <h3>Your BMR is: <%= link_to current_user.bmr, account_bmr_path, data: { keybinding: 'b' } %></h3>
 <% end %>
 
 <hr>
