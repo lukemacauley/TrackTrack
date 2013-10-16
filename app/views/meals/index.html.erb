@@ -1,10 +1,18 @@
 <section class="index">
-<% if user_signed_in? %>
-<h2><%= Date.today.strftime('%A, %d %B %Y') %></h2>
 
-<span>
-  <h4>Your BMR is: <%= link_to current_user.bmr, edit_user_registration_path %></h4>
-</span>
+<% flash.each do |name, msg| %>
+<%= content_tag(:div, msg, class: "alert") %>
+<% end %>
+
+<% if user_signed_in? %>
+
+<h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
+
+<% if current_user.bmr.nil? %>
+  <h3><%= link_to "Please set your BMR", edit_user_registration_path %></h3>
+<% else %>
+  <h3>Your BMR is: <%= link_to current_user.bmr, edit_user_registration_path %></h3>
+<% end %>
 
 <hr>
 
@@ -16,52 +24,44 @@
       <th>Protein</th>
       <th>Carbs</th>
       <th>Fats</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @meals.each do |meal| %>
-      <tr>
-        <td><%= meal.name %></td>
-        <td class="meal-list"><%= meal.calories %></td>
-        <td class="meal-list"><%= meal.protein %></td>
-        <td class="meal-list"><%= meal.carbohydrates %></td>
-        <td class="meal-list"><%= meal.fats %></td>
-        <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-        <td><%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td></td>
+      <tr class= "value">
+        <td><%= link_to meal.name, edit_meal_path(meal) %></td>
+        <td><%= meal.calories %></td>
+        <td><%= meal.protein %></td>
+        <td><%= meal.carbohydrates %></td>
+        <td><%= meal.fats %></td>
       </tr>
     <% end %>
       <tr>
         <td class="meal-total">Total:</td>
-        <td class="meal-list meal-total"><%= @meals.sum(:calories) %></td>
-        <td class="meal-list meal-total"><%= @meals.sum(:protein) %></td>
-        <td class="meal-list meal-total"><%= @meals.sum(:carbohydrates) %></td>
-        <td class="meal-list meal-total"><%= @meals.sum(:fats) %></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="meal-total"><%= @meals.sum(:calories) %></td>
+        <td class="meal-total"><%= @meals.sum(:protein) %></td>
+        <td class="meal-total"><%= @meals.sum(:carbohydrates) %></td>
+        <td class="meal-total"><%= @meals.sum(:fats) %></td>
       </tr>
-      <tr>
-        <td class="remaining">Remaining:</td>
-        <td class="meal-list remaining"><%= current_user.bmr - @meals.sum(:calories) %></td>
-        <td class="meal-list remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:protein) %></td>
-        <td class="meal-list remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:carbohydrates) %></td>
-        <td class="meal-list remaining"><%= (current_user.bmr*0.2/9).to_i - @meals.sum(:fats) %></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <% unless current_user.bmr.nil? %>
+      <tr class="remaining">
+        <td class="meal-remaining">Remaining:</td>
+        <td class="meal-remaining"><%= current_user.bmr - @meals.sum(:calories) %></td>
+        <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:protein) %></td>
+        <td class="meal-remaining"><%= (current_user.bmr*0.4/4).to_i - @meals.sum(:carbohydrates) %></td>
+        <td class="meal-remaining"><%= (current_user.bmr*0.2/9).to_i - @meals.sum(:fats) %></td>
       </tr>
+      <% end %>
   </tbody>
 </table>
 
-<br>
+<div class="add"><%= link_to "Add Meal", new_meal_path %></div>
 
-<%= link_to 'Add Meal', new_meal_path, data: { keybinding: 'n' } %>
 <% else %>
-Hello! Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to use this service.
+
+<div class="hello"><p>Track Track is an application for bodybuilders to track the calories and macronutrients of each meal.</p>
+  <p>Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to use this service.</p></div>
+
 <% end %>
 </section>

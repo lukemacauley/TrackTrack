@@ -1,9 +1,9 @@
 <%= form_for(@meal) do |f| %>
   <% if @meal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+      <h4><%= pluralize(@meal.errors.count, "error") %> prohibited this meal from being saved:</h4>
 
-      <ul>
+      <ul class="error">
       <% @meal.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: true, placeholder: "Meal 1, Shake 1, etc." %>
   </div>
   <div class="field">
     <%= f.label :calories %><br>
@@ -34,4 +34,9 @@
   <div class="actions">
     <%= f.submit "Save" %>
   </div>
+  <% if current_page?(edit_meal_path(@meal)) %>
+    <div class="delete">
+      <%= link_to "Delete", @meal, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
 <% end %>

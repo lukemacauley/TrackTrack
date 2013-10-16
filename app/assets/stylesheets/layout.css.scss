@@ -1,0 +1,125 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	z-index: 10;
+	nav {
+		display: inline;
+		float: left;
+		width: 100%;
+		ul {
+			padding-left: 0;
+			padding-right: 0;
+			display: inline-table;
+			li {
+				display: inline-block;
+				margin-left: 50px;
+			}
+		}
+	}
+	ul.profile {
+		display: inline-table;
+		position: relative;
+		float: right;
+		padding-left: 0;
+		padding-right: 0;
+		li {
+			width: 200px;
+			margin-right: 50px;
+			text-align: right;
+			ul.profile_links {
+				display: none;
+				li {
+					display: block;
+					text-align: right;
+					a {
+						color: #777;
+						margin-right: 50px;
+						&:hover {
+							color: #000;
+						}
+					}
+				}
+			}
+			&:hover > ul {
+				display: block;
+			}
+		}
+	}
+	ul.login {
+		float: right;
+		li {
+			display: inline-block;
+			&:last-child {
+				margin-right: 50px;
+			}
+		}
+	}
+}
+
+.alert {
+	position: fixed;
+	top: 15px;
+	left: auto;
+	right: auto;
+	width: 650px;
+	display: block;
+	text-align: center;
+	background-color: #ccc;
+	padding: 5px 0;
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+section.form {
+	max-width: 550px;
+	margin: 100px auto;
+	input {
+		border: none;
+		outline: none;
+		font-weight: 300;
+		&:-webkit-autofill {
+    	-webkit-box-shadow:0 0 0 50px white inset;
+    	-webkit-text-fill-color: #777;
+		}
+		&:-webkit-autofill:focus {
+		   -webkit-box-shadow: 0 0 0 50px white inset;
+		   -webkit-text-fill-color: #777;
+		}
+		&[type="submit"] {
+			padding: 7px 25px;
+			font-size: 1.3em;
+			color: #fff;
+			border: 1px solid #ccc;
+			margin-top: 10px;
+			transition-property: all;
+			transition-duration: .5s;
+			-webkit-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-moz-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-ms-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-o-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			&:hover {
+				color: #ccc;
+				background-color: #FFF;
+				border: 1px solid #ccc;
+			}
+		}
+	}
+	#meal_name, #meal_calories, #meal_protein, #meal_carbohydrates, #meal_fats {
+		border: 1px solid #ccc;
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+	}
+	div.field {
+		margin-bottom: 15px;
+	}
+}
+
+
+
+
