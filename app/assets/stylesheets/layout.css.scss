@@ -16,6 +16,17 @@ header {
 			li {
 				display: inline-block;
 				margin-left: 50px;
+				.logo {
+					text-transform: uppercase;
+					font-weight: 700;
+					border-left: 4px solid #4d4d4d;
+					color: #4d4d4d;
+					padding: 0 0 0 10px;
+					line-height: 24px;
+					&:hover {
+						text-decoration: none;
+					}
+				}
 			}
 		}
 	}
@@ -26,17 +37,17 @@ header {
 		padding-left: 0;
 		padding-right: 0;
 		li {
-			width: 200px;
 			margin-right: 50px;
 			text-align: right;
 			ul.profile_links {
 				display: none;
 				li {
+					width: 175px;
 					display: block;
 					text-align: right;
 					a {
 						color: #777;
-						margin-right: 50px;
+						margin-right: -50px;
 						&:hover {
 							color: #000;
 						}
@@ -69,6 +80,10 @@ footer {
 		float: left;
 		padding: 0;
 		margin-left: 50px;
+		li {
+			display: inline-block;
+			margin-right: 35px;
+		}
 	}
 	ul.links {
 		float: right;

@@ -1,7 +1,7 @@
 <section class="index">
 
 <% flash.each do |name, msg| %>
-<%= content_tag(:div, msg, class: "alert") %>
+  <%= content_tag(:div, msg, class: "alert") %>
 <% end %>
 
 <% if user_signed_in? %>
