@@ -4,8 +4,9 @@
   <%= content_tag(:div, msg, class: "alert") %>
 <% end %>
 
+<% if user_signed_in? %>
+
 <div class="header">
-  <% if user_signed_in? %>
   
   <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
   

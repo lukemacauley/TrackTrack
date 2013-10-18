@@ -3,12 +3,14 @@ class MealsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @todays_meals = current_user.meals.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day) if user_signed_in?
-    @previous_meals = current_user.meals.where("created_at < ?", Time.now.beginning_of_day) if user_signed_in?
-    @remaining_calories = current_user.bmr - @todays_meals.sum(:calories)
-    @remaining_protein = current_user.weight.to_i - @todays_meals.sum(:protein)
-    @remaining_fats = (current_user.bmr*0.2/9).to_i - @todays_meals.sum(:fats)
-    @remaining_carbs = ((current_user.bmr) - (@remaining_protein*4) - (@remaining_fats*9) - (@todays_meals.sum(:carbohydrates)*4))/4 unless current_user.nil?
+    if user_signed_in?
+      @todays_meals = current_user.meals.today
+      @previous_meals = current_user.meals.previous
+      @remaining_calories = current_user.bmr - @todays_meals.sum(:calories)
+      @remaining_protein = current_user.weight.to_i - @todays_meals.sum(:protein)
+      @remaining_fats = (current_user.bmr*0.2/9).to_i - @todays_meals.sum(:fats)
+      @remaining_carbs = ((current_user.bmr) - (@remaining_protein*4) - (@remaining_fats*9) - (@todays_meals.sum(:carbohydrates)*4))/4
+    end
   end
 
   def new
