@@ -9,7 +9,7 @@ class MealsController < ApplicationController
       @remaining_calories = current_user.bmr - @todays_meals.sum(:calories)
       @remaining_protein = current_user.weight.to_i - @todays_meals.sum(:protein)
       @remaining_fats = (current_user.bmr*0.2/9).to_i - @todays_meals.sum(:fats)
-      @remaining_carbs = ((current_user.bmr) - (@remaining_protein*4) - (@remaining_fats*9) - (@todays_meals.sum(:carbohydrates)*4))/4
+      @remaining_carbs = carbs_calculator
     end
   end
 
@@ -59,5 +59,9 @@ class MealsController < ApplicationController
 
     def meal_params
       params.require(:meal).permit(:name, :calories, :protein, :carbohydrates, :fats, :start_time, :end_time)
+    end
+
+    def carbs_calculator
+      (current_user.bmr - @remaining_protein*4 - @remaining_fats*9 - @todays_meals.sum(:carbohydrates)*4)/4
     end
 end
