@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
+h1 a, h2 a, h3 a, h4, a h5 a, h6 a {
+    color: #2b2b2b;
+}
+
 p {
     font-size: 1em;
     line-height: 1.5em;
@@ -32,7 +36,7 @@ ul {
 }
 
 a {
-	color: #777;
+	color: #4d4d4d;
   text-decoration: none;
   outline: 0;
 	transition-property: all;
@@ -46,8 +50,7 @@ a {
   	text-decoration: none;
   }
 	&:hover, &:focus {
-		color: #4d4d4d;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 
@@ -64,5 +67,5 @@ hr {
   height: 3px;
   background-color: #ccc;
   border: none;
-  margin: 13px 0;
+  margin: 13px auto;
 }

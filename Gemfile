@@ -23,6 +23,7 @@ gem 'stringex'
 gem 'simple_form'
 gem 'mousetrap-rails'
 gem 'jquery-ui-rails'
+gem 'ledermann-rails-settings', require: 'rails-settings'
 
 group :doc do
   gem 'sdoc', require: false

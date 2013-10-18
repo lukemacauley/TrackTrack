@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015221405) do
+ActiveRecord::Schema.define(version: 20131017165043) do
 
   create_table "meals", force: true do |t|
     t.integer  "calories",      default: 0, null: false
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20131015221405) do
     t.integer  "user_id"
     t.string   "name"
   end
+
+  create_table "settings", force: true do |t|
+    t.string   "var",         null: false
+    t.text     "value"
+    t.integer  "target_id",   null: false
+    t.string   "target_type", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131015221405) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bmr"
+    t.integer  "weight"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

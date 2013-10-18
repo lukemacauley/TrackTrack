@@ -3,9 +3,12 @@
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
+
+    <div>Weight (lb)<br />
+    <%= f.text_field :weight, autofocus: true, autocomplete: :off %></div>
   
     <div>BMR<br />
-    <%= f.text_field :bmr, autofocus: true %></div>
+    <%= f.text_field :bmr, autocomplete: :off %></div>
 
     <div><%= f.label :current_password %><br />
     <%= f.password_field :current_password, placeholder: "Your current password is needed to confirm the change" %></div>

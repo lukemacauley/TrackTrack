@@ -1,7 +1,7 @@
 <header>
 	<nav>
 		<ul>
-			<li><%= link_to "Track Track", root_path, class: "logo", data: { keybinding: 'h' } %></li>
+			<li><%= link_to image_tag('logo.png'), root_path, class: "logo", data: { keybinding: 'h' } %></li>
 		<% if user_signed_in? %>
 			<li><%# link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></li>
 		</ul>

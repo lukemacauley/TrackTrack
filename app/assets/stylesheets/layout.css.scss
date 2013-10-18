@@ -17,12 +17,7 @@ header {
 				display: inline-block;
 				margin-left: 50px;
 				.logo {
-					text-transform: uppercase;
-					font-weight: 700;
-					border-left: 4px solid #4d4d4d;
-					color: #4d4d4d;
-					padding: 0 0 0 10px;
-					line-height: 24px;
+					height: 10px;
 					&:hover {
 						text-decoration: none;
 					}
@@ -46,10 +41,10 @@ header {
 					display: block;
 					text-align: right;
 					a {
-						color: #777;
+						color: #4d4d4d;
 						margin-right: -50px;
 						&:hover {
-							color: #000;
+							color: #4d4d4d;
 						}
 					}
 				}

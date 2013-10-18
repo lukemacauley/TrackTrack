@@ -8,26 +8,30 @@ section.index {
 	h1, h2, h3, h4, h5, h6 {
 		text-align: center;
 	}
-	h4 {
+	h1 {
+		font-style: 35px;
+	}
+	h3 {
 		margin-bottom: 13px;
+		line-height: 1.4em;
 	}
 	.arrow {
 		text-decoration: none;
 	}
 	table {
 		margin: 0 auto;
-		font-size: 1.1em;
 		th {
-			padding: 2px 15px;
+			padding: 4px 15px;
 			text-align: center;
 			padding-bottom: 13px;
+			font-size: 20px;
 			&:first-child {
 				text-align: left;
 				padding-left: 4px;
 			}
 		}
 		td {
-			padding: 2px 15px;
+			padding: 4px 15px;
 			text-align: center;
 			&:first-child {
 				text-align: left;
@@ -41,14 +45,16 @@ section.index {
 			background-color: #fff;
 		}
 		.meal-total {
-			padding-top: 13px;
 			font-weight: bold;
+			font-size: 20px;
+;
 		}
 		.meal-remaining {
 			font-weight: bold;
+			font-size: 20px;
 		}
-		.remaining {
-			background-color: #FFFFCA;
+		tr:nth-last-child(2) td {
+			padding-top: 13px;
 		}
 	}
 	.add {
