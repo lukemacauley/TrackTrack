@@ -1,6 +1,6 @@
 Tracktrack::Application.routes.draw do
 
-  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification', unlock: 'unblock', registration: 'account', sign_up: 'new' }
+  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification', unlock: 'unblock', registration: 'account', sign_up: 'new', registrations: 'registrations' }
   resources :meals, only: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
