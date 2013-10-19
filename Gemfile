@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'mousetrap-rails'
 gem 'jquery-ui-rails'
 gem 'ledermann-rails-settings', require: 'rails-settings'
+gem 'unicorn'
 
 group :doc do
   gem 'sdoc', require: false
