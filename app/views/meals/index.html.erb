@@ -10,12 +10,8 @@
   
   <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
   
-  <% if current_user.bmr.blank? && current_user.weight.nil? %>
-    <h3><%= link_to "Please set your Weight and BMR", account_stats_path, data: { keybinding: 'b' } %></h3>
-  <% elsif current_user.bmr.nil? %>
-    <h3><%= link_to "Please set your BMR", account_stats_path, data: { keybinding: 'b' } %></h3>
-  <% elsif current_user.weight.nil? %>
-    <h3><%= link_to "Please set your Weight", account_stats_path, data: { keybinding: 'b' } %></h3>
+  <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
+    <h3><%= link_to "Please Set Your Stats", account_stats_path %></h3>
   <% else %>
     <h3>
       Your Protein Intake is <%= link_to "#{current_user.protein_intake}g with #{current_user.weight}lb Weight", account_stats_path %><br>
