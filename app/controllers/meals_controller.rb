@@ -6,7 +6,7 @@ class MealsController < ApplicationController
     if user_signed_in?
       @todays_meals = current_user.meals.today
       @previous_meals = current_user.meals.previous
-      unless current_user.bmr.nil? || current_user.weight.nil?
+      unless current_user.bmr.nil? || current_user.weight.nil? || current_user.protein_intake.nil? || current_user.fat_percentage.nil?
         @remaining_calories = (current_user.bmr) - @todays_meals.sum(:calories)
         @remaining_protein = current_user.protein_intake - @todays_meals.sum(:protein)
         @remaining_fats = (current_user.bmr*current_user.fat_percentage/900).to_i - @todays_meals.sum(:fats)
