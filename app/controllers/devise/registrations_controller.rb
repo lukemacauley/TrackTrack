@@ -1,6 +1,6 @@
 class Devise::RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
-  prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy, :bmr]
+  prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy, :stats]
 
   # GET /resource/sign_up
   def new
@@ -33,8 +33,8 @@ class Devise::RegistrationsController < DeviseController
     render :edit
   end
 
-  def bmr
-    render :bmr
+  def stats
+    render :stats
   end
 
   # PUT /resource

@@ -10,15 +10,15 @@
   
   <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
   
-  <% if current_user.bmr.nil? && current_user.weight.nil? %>
-    <h3><%= link_to "Please set your Weight and BMR", account_bmr_path, data: { keybinding: 'b' } %></h3>
+  <% if current_user.bmr.blank? && current_user.weight.nil? %>
+    <h3><%= link_to "Please set your Weight and BMR", account_stats_path, data: { keybinding: 'b' } %></h3>
   <% elsif current_user.bmr.nil? %>
-    <h3><%= link_to "Please set your BMR", account_bmr_path, data: { keybinding: 'b' } %></h3>
+    <h3><%= link_to "Please set your BMR", account_stats_path, data: { keybinding: 'b' } %></h3>
   <% elsif current_user.weight.nil? %>
-    <h3><%= link_to "Please set your Weight", account_bmr_path, data: { keybinding: 'b' } %></h3>
+    <h3><%= link_to "Please set your Weight", account_stats_path, data: { keybinding: 'b' } %></h3>
   <% else %>
-    <h3>Your Weight is <%= link_to "#{current_user.weight}lb", account_bmr_path %><br>
-        Your BMR is <%= link_to current_user.bmr, account_bmr_path, data: { keybinding: 'b' } %></h3>
+    <h3>Your Weight is <%= link_to "#{current_user.weight}lb", account_stats_path %><br>
+        Your BMR is <%= link_to current_user.bmr, account_stats_path, data: { keybinding: 'b' } %></h3>
   <% end %>
   
   <hr>

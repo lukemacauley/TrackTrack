@@ -30,7 +30,7 @@ Tracktrack::Application.routes.draw do
   #   resources :products
 
       devise_scope :user do 
-        get "account/bmr" => "devise/registrations#bmr"
+        get "account/stats" => "devise/registrations#stats"
       end
 
   # Example resource route with options:
