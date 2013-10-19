@@ -17,8 +17,10 @@
   <% elsif current_user.weight.nil? %>
     <h3><%= link_to "Please set your Weight", account_stats_path, data: { keybinding: 'b' } %></h3>
   <% else %>
-    <h3>Your Weight is <%= link_to "#{current_user.weight}lb", account_stats_path %><br>
-        Your BMR is <%= link_to current_user.bmr, account_stats_path, data: { keybinding: 'b' } %></h3>
+    <h3>
+      Your Protein Intake is <%= link_to "#{current_user.protein_intake}g with #{current_user.weight}lb Weight", account_stats_path %><br>
+      Your Fat Percentage is <%= link_to "#{current_user.fat_percentage}% of #{current_user.bmr} Calories", account_stats_path %>
+    </h3>
   <% end %>
   
   <hr>

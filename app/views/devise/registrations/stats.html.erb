@@ -10,6 +10,12 @@
     <div>BMR<br />
     <%= f.text_field :bmr, autocomplete: :off %></div>
 
+    <div>Protein Intake (g)<br />
+    <%= f.text_field :protein_intake, autocomplete: :off %></div>
+
+    <div>Fat Percentage of Overall Calories (%)<br />
+    <%= f.text_field :fat_percentage, autocomplete: :off %></div>
+
     <div><%= f.submit "Update" %></div>
   <% end %>
 
