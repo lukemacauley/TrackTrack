@@ -14,7 +14,7 @@
     <h3><%= link_to "Please Set Your Stats", account_stats_path %></h3>
   <% else %>
     <h3>
-      Your Protein Intake is <%= link_to "#{current_user.protein_intake}g with #{current_user.weight}lb Weight", account_stats_path %><br>
+      Your Protein Intake is <%= link_to "#{current_user.protein_intake}g with You#{current_user.weight}lb Weight", account_stats_path %><br>
       Your Fat Percentage is <%= link_to "#{current_user.fat_percentage}% of #{current_user.bmr} Calories", account_stats_path %>
     </h3>
   <% end %>
@@ -50,7 +50,7 @@
         <td class="meal-total"><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
         <td class="meal-total"><%= "#{@todays_meals.sum(:fats)}g" %></td>
       </tr>
-      <% unless current_user.bmr.nil? || current_user.weight.nil? %>
+      <% unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
         <tr class="remaining">
           <td class="meal-remaining">Remaining:</td>
           <td class="meal-remaining"><%= @remaining_calories %></td>
