@@ -12,6 +12,8 @@ class MealsController < ApplicationController
         @remaining_fats = (current_user.bmr*0.2/9).to_i - @todays_meals.sum(:fats)
         @remaining_carbs = carbs_calculator
       end
+    else
+      @no_header = true
     end
   end
 
