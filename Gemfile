@@ -25,6 +25,7 @@ gem 'mousetrap-rails'
 gem 'jquery-ui-rails'
 gem 'ledermann-rails-settings', require: 'rails-settings'
 gem 'unicorn'
+gem "simple_calendar", "~> 0.1.9"
 
 group :doc do
   gem 'sdoc', require: false
