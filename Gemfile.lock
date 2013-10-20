@@ -65,6 +65,7 @@ GEM
     minitest (4.7.5)
     mousetrap-rails (0.0.12)
     multi_json (1.8.2)
+    newrelic_rpm (3.6.7.159)
     orm_adapter (0.4.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -148,6 +149,7 @@ DEPENDENCIES
   jquery-ui-rails
   ledermann-rails-settings
   mousetrap-rails
+  newrelic_rpm
   pg
   rails (= 4.0.0)
   rails_12factor
