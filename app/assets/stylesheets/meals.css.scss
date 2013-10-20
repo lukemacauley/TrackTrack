@@ -5,7 +5,7 @@
 section.index {
 	max-width: 650px;
 	margin: 75px auto;
-	h1, h2, h3, h4, h5, h6 {
+	h1, h3 {
 		text-align: center;
 	}
 	h1 {
@@ -16,46 +16,38 @@ section.index {
 		line-height: 1.4em;
 		font-weight: 300;
 	}
-	.arrow {
-		text-decoration: none;
-	}
 	table {
 		margin: 0 auto;
 		th {
-			padding: 4px 15px;
+			padding: 3px 15px;
 			text-align: center;
-			padding-bottom: 13px;
 			font-size: 20px;
 			&:first-child {
 				text-align: left;
-				padding-left: 4px;
+				padding-left: 0;
 			}
 		}
 		td {
-			padding: 4px 15px;
+			padding: 6px 15px;
 			text-align: center;
 			&:first-child {
 				text-align: left;
-				padding-left: 4px;
+				padding-left: 6px;
 			}
 		}
-		.value:nth-child(odd) {
+		tr.value {
 			background-color: #eee;
 		}
-		.value:nth-child(even) {
+		tr.separator {
+			height: 10px;
+		}
+		tr.total-consumed, tr.total-remaining {
 			background-color: #fff;
 		}
-		.meal-total {
+		td.consumed, td.remaining {
 			font-weight: bold;
 			font-size: 20px;
-;
-		}
-		.meal-remaining {
-			font-weight: bold;
-			font-size: 20px;
-		}
-		tr:nth-last-child(2) td {
-			padding-top: 13px;
+			padding: 3px 0;
 		}
 	}
 	.add {
@@ -66,7 +58,7 @@ section.index {
 }
 
 .delete {
-	margin-top: 15px;
+	margin-top: 13px;
 }
 
 #error_explanation {

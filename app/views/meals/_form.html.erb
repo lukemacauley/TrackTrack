@@ -36,7 +36,7 @@
   </div>
   <% if current_page?(edit_meal_path(@meal)) %>
     <div class="delete">
-      <%= link_to "Delete", @meal, method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete #{@meal.name}", @meal, method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
   <% end %>
 <% end %>

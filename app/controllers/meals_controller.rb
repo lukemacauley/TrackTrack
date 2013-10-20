@@ -24,10 +24,6 @@ class MealsController < ApplicationController
   def edit
   end
 
-  def show
-    render action: 'yesterday'
-  end
-
   def create
     @meal = current_user.meals.build(meal_params)
 

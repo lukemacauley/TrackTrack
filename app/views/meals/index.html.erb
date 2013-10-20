@@ -6,72 +6,77 @@
 
 <% if user_signed_in? %>
 
-<div class="header">
+  <div class="header">
+     
+    <h1><%= Date.today.strftime('%A, %d %B %Y') %></h1>
+     
+    <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
+      <h3><%= link_to "Please Set Your Stats", account_profile_path %></h3>
+    <% else %>
+      <h3>
+        <%= link_to "Your protein intake is #{current_user.protein_intake}g, #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight   (#{current_user.weight}lb)".html_safe, account_profile_path %><br>
+        <%= link_to "Your fat intake is #{current_user.fat_percentage}% of #{current_user.bmr}kcal, #{@fat_grams}g", account_profile_path %>
+      </h3>
+    <% end %>
+     
+    <hr>
   
-  <h1><%# link_to "&#171".html_safe, yesterday_path, class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %></h1>
+  </div>
   
-  <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
-    <h3><%= link_to "Please Set Your Stats", account_stats_path %></h3>
-  <% else %>
-    <h3>
-      <%= link_to "Your protein intake is #{current_user.protein_intake}g, #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, account_stats_path %><br>
-      <%= link_to "Your fat intake is #{current_user.fat_percentage}% of #{current_user.bmr}kcal, #{@fat_grams}g", account_stats_path %>
-    </h3>
-  <% end %>
-  
-  <hr>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Calories</th>
-      <th>Protein</th>
-      <th>Carbs</th>
-      <th>Fats</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todays_meals.each do |meal| %>
-      <tr class= "value">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Protein</th>
+        <th>Carbs</th>
+        <th>Fats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="separator"></tr>
+      <% @todays_meals.each do |meal| %>
+        <tr class= "value">
           <td><%= link_to meal.name, edit_meal_path(meal) %></td>
           <td><%= meal.calories %></td>
           <td><%= "#{meal.protein}g" %></td>
           <td><%= "#{meal.carbohydrates}g" %></td>
           <td><%= "#{meal.fats}g" %></td>
-      </tr>
-    <% end %>
-      <tr>
-        <td class="meal-total">Consumed:</td>
-        <td class="meal-total"><%= @todays_meals.sum(:calories) %></td>
-        <td class="meal-total"><%= "#{@todays_meals.sum(:protein)}g" %></td>
-        <td class="meal-total"><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
-        <td class="meal-total"><%= "#{@todays_meals.sum(:fats)}g" %></td>
-      </tr>
-      <% unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
-        <tr class="remaining">
-          <td class="meal-remaining">Remaining:</td>
-          <td class="meal-remaining"><%= @remaining_calories %></td>
-          <td class="meal-remaining"><%= "#{@remaining_protein}g" %></td>
-          <td class="meal-remaining"><%= "#{@remaining_carbs}g" %></td>
-          <td class="meal-remaining"><%= "#{@remaining_fats}g" %></td>
         </tr>
       <% end %>
-  </tbody>
-</table>
-
-<div class="add"><%= link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></div>
+    </tbody>
+    <tfoot>
+      <tr class="separator"></tr>
+      <tr class="total-consumed">
+        <td class="consumed">Consumed:</td>
+        <td class="consumed"><%= @todays_meals.sum(:calories) %></td>
+        <td class="consumed"><%= "#{@todays_meals.sum(:protein)}g" %></td>
+        <td class="consumed"><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
+        <td class="consumed"><%= "#{@todays_meals.sum(:fats)}g" %></td>
+      </tr>
+      <% unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
+        <tr class="total-remaining">
+          <td class="remaining">Remaining:</td>
+          <td class="remaining"><%= @remaining_calories %></td>
+          <td class="remaining"><%= "#{@remaining_protein}g" %></td>
+          <td class="remaining"><%= "#{@remaining_carbs}g" %></td>
+          <td class="remaining"><%= "#{@remaining_fats}g" %></td>
+        </tr>
+      <% end %>
+    </tfoot>
+  </table>
+  
+  <div class="add"><%= link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></div>
+  
+  </section>
 
 <% else %>
-</section>
-
-<div class="hello">
-  <%= link_to image_tag("logo.png"), root_path, class: "logo-hello" %>
-  <p>Track Track is an application for bodybuilders to track the calories and macronutrients of each meal.</p>
-  <%= link_to "Login", new_user_session_path, class: "btn" %>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
-</div>
+  
+  <div class="hello">
+    <%= link_to image_tag("logo.png"), root_path, class: "logo-hello" %>
+    <p>Track Track is an application for bodybuilders to track the calories and macronutrients of each meal.</p>
+    <%= link_to "Login", new_user_session_path, class: "btn" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+  </div>
 
 <% end %>
