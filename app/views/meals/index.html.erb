@@ -8,14 +8,14 @@
 
 <div class="header">
   
-  <h1><%# link_to "&#171".html_safe, 'javascript:void(0)', class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %> <%# link_to "&#187".html_safe, 'javascript:void(0)', class: "arrow" %></h1>
+  <h1><%# link_to "&#171".html_safe, yesterday_path, class: "arrow" %> <%= Date.today.strftime('%A, %d %B %Y') %></h1>
   
   <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
     <h3><%= link_to "Please Set Your Stats", account_stats_path %></h3>
   <% else %>
     <h3>
-      Your Protein Intake is <%= link_to "#{current_user.protein_intake}g with You#{current_user.weight}lb Weight", account_stats_path %><br>
-      Your Fat Percentage is <%= link_to "#{current_user.fat_percentage}% of #{current_user.bmr} Calories", account_stats_path %>
+      <%= link_to "Your protein intake is #{current_user.protein_intake}g, #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, account_stats_path %><br>
+      <%= link_to "Your fat intake is #{current_user.fat_percentage}% of #{current_user.bmr}kcal, #{@fat_grams}g", account_stats_path %>
     </h3>
   <% end %>
   

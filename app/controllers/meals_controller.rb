@@ -5,12 +5,12 @@ class MealsController < ApplicationController
   def index
     if user_signed_in?
       @todays_meals = current_user.meals.today
-      @previous_meals = current_user.meals.previous
       unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
         @remaining_calories = (current_user.bmr) - @todays_meals.sum(:calories)
         @remaining_protein = current_user.protein_intake - @todays_meals.sum(:protein)
-        @remaining_fats = (current_user.bmr*current_user.fat_percentage/900).to_i - @todays_meals.sum(:fats)
+        @remaining_fats = (current_user.bmr * current_user.fat_percentage / 900).to_i - @todays_meals.sum(:fats)
         @remaining_carbs = carbs_calculator
+        @fat_grams = current_user.fat_percentage * current_user.bmr / 900
       end
     else
       @no_header = true
@@ -22,6 +22,10 @@ class MealsController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
+    render action: 'yesterday'
   end
 
   def create
@@ -66,6 +70,6 @@ class MealsController < ApplicationController
     end
 
     def carbs_calculator
-      (current_user.bmr - @remaining_protein*4 - @remaining_fats*9 - @todays_meals.sum(:carbohydrates)*4)/4
+      (current_user.bmr - @remaining_protein * 4 - @remaining_fats * 9 - @todays_meals.sum(:carbohydrates) * 4) / 4
     end
 end
