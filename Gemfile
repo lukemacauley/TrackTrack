@@ -26,6 +26,7 @@ gem 'jquery-ui-rails'
 gem 'ledermann-rails-settings', require: 'rails-settings'
 gem 'unicorn'
 gem "simple_calendar", "~> 0.1.9"
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
