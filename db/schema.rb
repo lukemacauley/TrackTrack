@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020181752) do
+ActiveRecord::Schema.define(version: 20131021143740) do
 
   create_table "meals", force: true do |t|
     t.integer  "calories",      default: 0, null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131020181752) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "name"
+    t.text     "description"
   end
 
   create_table "settings", force: true do |t|
