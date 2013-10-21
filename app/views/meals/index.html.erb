@@ -14,8 +14,9 @@
       <h3><%= link_to "Please Set Your Stats", account_profile_path %></h3>
     <% else %>
       <h3>
-        <%= link_to "Your protein intake is #{current_user.protein_intake}g, #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight   (#{current_user.weight}lb)".html_safe, account_profile_path %><br>
-        <%= link_to "Your fat intake is #{current_user.fat_percentage}% of #{current_user.bmr}kcal, #{@fat_grams}g", account_profile_path %>
+        <%= link_to "Your protein intake is #{current_user.protein_intake}g, #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, account_profile_path %><br>
+        <%= link_to "Your carb intake is #{@carb_grams}g, #{(@carb_grams * 400.to_f / current_user.bmr).round(1)}% of #{current_user.bmr}kcal", account_profile_path %><br>
+        <%= link_to "Your fat intake is #{@fat_grams}g, #{current_user.fat_percentage}% of #{current_user.bmr}kcal", account_profile_path %>
       </h3>
     <% end %>
      

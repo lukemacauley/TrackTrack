@@ -11,6 +11,7 @@ class MealsController < ApplicationController
         @remaining_fats = (current_user.bmr * current_user.fat_percentage / 900).to_i - @todays_meals.sum(:fats)
         @remaining_carbs = carbs_calculator
         @fat_grams = current_user.fat_percentage * current_user.bmr / 900
+        @carb_grams = (carbs_calculator + @todays_meals.sum(:carbohydrates))
       end
     else
       @no_header = true
@@ -66,6 +67,6 @@ class MealsController < ApplicationController
     end
 
     def carbs_calculator
-      (current_user.bmr - @remaining_protein * 4 - @remaining_fats * 9 - @todays_meals.sum(:carbohydrates) * 4) / 4
+      (current_user.bmr - ((@remaining_protein + @todays_meals.sum(:protein)) * 4) - ((@remaining_fats + @todays_meals.sum(:fats)) * 9) - (@todays_meals.sum(:carbohydrates) * 4)) / 4
     end
 end
