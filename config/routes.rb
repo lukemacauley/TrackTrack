@@ -19,6 +19,8 @@ Tracktrack::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+      get 'yesterday' => 'meals#yesterday'
+
       get 'add' => 'meals#new', as: :new_meal
       get ':id/edit' => 'meals#edit', as: :edit_meal
       get ':id' => 'meals#show', as: :meal

@@ -1,12 +1,13 @@
 class Meal < ActiveRecord::Base
 
 	scope :today, lambda { 
-		where("created_at > ?", Time.now.beginning_of_day)
+		where("created_at > ?", Time.zone.now.beginning_of_day)
+		.where("created_at < ?", Time.zone.now.end_of_day)
 	}
 
-	scope :for_date, ->(date) { 
-  	where("created_at > ?", date.beginning_of_day)
-  	.where("created_at < ?", date.end_of_day) 
+	scope :yesterday, lambda {
+		where("created_at > ?", Time.zone.now.beginning_of_day - 1.day)
+		.where("created_at < ?", Time.zone.now.end_of_day - 1.day)
 	}
 
 	validates :name, presence: true

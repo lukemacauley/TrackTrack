@@ -5,7 +5,6 @@ class MealsController < ApplicationController
   def index
     if user_signed_in?
       @todays_meals = current_user.meals.today.order('created_at ASC')
-      @particular_day = current_user.meals.for_date(2.days.ago)
       unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
         @remaining_calories = (current_user.bmr) - @todays_meals.sum(:calories)
         @remaining_protein = current_user.protein_intake - @todays_meals.sum(:protein)
@@ -17,6 +16,24 @@ class MealsController < ApplicationController
     else
       @no_header = true
     end
+  end
+
+  def yesterday
+    if user_signed_in?
+      @yesterdays_meals = current_user.meals.yesterday.order('created_at ASC')
+      unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
+        @remaining_calories = (current_user.bmr) - @yesterdays_meals.sum(:calories)
+        @remaining_protein = current_user.protein_intake - @yesterdays_meals.sum(:protein)
+        @remaining_fats = (current_user.bmr * current_user.fat_percentage / 900).to_i - @yesterdays_meals.sum(:fats)
+        @remaining_carbs = carbs_calculator_yes
+        @fat_grams = current_user.fat_percentage * current_user.bmr / 900
+        @carb_grams = (carbs_calculator_yes + @yesterdays_meals.sum(:carbohydrates))
+      end
+    end
+  end
+
+  def show
+    render action: 'yesterday'  
   end
 
   def new
@@ -69,5 +86,9 @@ class MealsController < ApplicationController
 
     def carbs_calculator
       (current_user.bmr - ((@remaining_protein + @todays_meals.sum(:protein)) * 4) - ((@remaining_fats + @todays_meals.sum(:fats)) * 9) - (@todays_meals.sum(:carbohydrates) * 4)) / 4
+    end
+
+    def carbs_calculator_yes
+      (current_user.bmr - ((@remaining_protein + @yesterdays_meals.sum(:protein)) * 4) - ((@remaining_fats + @yesterdays_meals.sum(:fats)) * 9) - (@yesterdays_meals.sum(:carbohydrates) * 4)) / 4
     end
 end

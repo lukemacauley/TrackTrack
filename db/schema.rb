@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021143740) do
+ActiveRecord::Schema.define(version: 20131022231553) do
 
   create_table "meals", force: true do |t|
     t.integer  "calories",      default: 0, null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20131021143740) do
     t.integer  "protein_intake"
     t.integer  "fat_percentage"
     t.string   "name"
+    t.string   "timezone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

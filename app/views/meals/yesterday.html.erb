@@ -1,18 +1,3 @@
-<% unless user_signed_in? %>
-
-  <section class="hello">
-
-    <%= link_to image_tag("logo.png"), root_path, class: "logo-hello fadeIn" %>
-
-    <p class="fadeInUp">The next level of tracking nutrition.</p>
-
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn fadeIn" %>
-    <%= link_to "Login", new_user_session_path, class: "btn login fadeIn" %>
-
-  </section>
-
-<% else %>
-
 <section class="index">
 
 <% flash.each do |name, msg| %>
@@ -21,16 +6,16 @@
 
   <div class="header">
      
-    <h1><%= link_to "&#171".html_safe, yesterday_path %> <%= Time.zone.today.strftime('%A, %d %B %Y') %></h1>
+    <h1><%= Date.yesterday.strftime('%A, %d %B %Y') %> <%= link_to "&#187".html_safe, root_path %></h1>
      
     <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
       <h3><%= link_to "Please Set Your Stats", account_profile_path %></h3>
     <% else %>
-      <h3>
-        <%= link_to "Your protein intake is #{current_user.protein_intake}g &#8212; #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, account_profile_path %><br>
-        <%= link_to "Your carb intake is #{@carb_grams}g &#8212; #{(@carb_grams * 400.to_f / current_user.bmr).round(1)}% of #{current_user.bmr}kcal".html_safe, account_profile_path %><br>
-        <%= link_to "Your fat intake is #{@fat_grams}g &#8212; #{current_user.fat_percentage}% of #{current_user.bmr}kcal".html_safe, account_profile_path %>
-      </h3>
+     <!-- <h3>
+        <%# link_to "Your protein intake was #{current_user.protein_intake}g &#8212; #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, account_profile_path %><br>
+        <%# link_to "Your carb intake was #{@carb_grams}g &#8212; #{(@carb_grams * 400.to_f / current_user.bmr).round(1)}% of #{current_user.bmr}kcal".html_safe, account_profile_path %><br>
+        <%# link_to "Your fat intake was #{@fat_grams}g &#8212; #{current_user.fat_percentage}% of #{current_user.bmr}kcal".html_safe, account_profile_path %>
+      </h3> -->
     <% end %>
      
     <hr>
@@ -49,7 +34,7 @@
     </thead>
     <tbody>
       <tr class="separator"></tr>
-      <% @todays_meals.each do |meal| %>
+      <% @yesterdays_meals.each do |meal| %>
         <tr class= "value">
           <% if meal.description.blank? %>
             <td><%= link_to meal.name, edit_meal_path(meal) %></td>
@@ -67,10 +52,10 @@
       <tr class="separator"></tr>
       <tr class="total-consumed">
         <td class="consumed">Consumed:</td>
-        <td class="consumed"><%= @todays_meals.sum(:calories) %></td>
-        <td class="consumed"><%= "#{@todays_meals.sum(:protein)}g" %></td>
-        <td class="consumed"><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
-        <td class="consumed"><%= "#{@todays_meals.sum(:fats)}g" %></td>
+        <td class="consumed"><%= @yesterdays_meals.sum(:calories) %></td>
+        <td class="consumed"><%= "#{@yesterdays_meals.sum(:protein)}g" %></td>
+        <td class="consumed"><%= "#{@yesterdays_meals.sum(:carbohydrates)}g" %></td>
+        <td class="consumed"><%= "#{@yesterdays_meals.sum(:fats)}g" %></td>
       </tr>
       <% unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
         <tr class="total-remaining">
@@ -84,8 +69,6 @@
     </tfoot>
   </table>
   
-  <div class="add"><%= link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></div>
+  <div class="add"><%# link_to "Add Meal", new_meal_path, data: { keybinding: 'a' } %></div>
   
   </section>
-
-<% end %>
