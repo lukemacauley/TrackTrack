@@ -4,4 +4,4 @@
 
 $(document).ready ->
 	$('.alert').delay(2000).fadeOut(500)
-	$('textarea').elastic()
+	$('#meal_description').elastic()
