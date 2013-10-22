@@ -16,6 +16,11 @@
   
     <div><%= f.label :password %><br />
     <%= f.password_field :password, :autocomplete => "off", placeholder: "Leave blank if you don't want to change it" %></div>
+
+    <div class="field">
+      <%= f.label :timezone %> <br>
+      <%= f.time_zone_select :timezone %>
+    </div>  
   
     <div><%= f.submit "Update" %></div>
   <% end %>
