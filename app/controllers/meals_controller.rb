@@ -63,7 +63,7 @@ class MealsController < ApplicationController
     end
 
     def meal_params
-      params.require(:meal).permit(:name, :calories, :protein, :carbohydrates, :fats, :start_time, :end_time)
+      params.require(:meal).permit(:name, :description, :calories, :protein, :carbohydrates, :fats, :start_time, :end_time)
     end
 
     def carbs_calculator

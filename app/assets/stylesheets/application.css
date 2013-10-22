@@ -11,6 +11,5 @@
  *= require normalize
  *= require basic
  *= require_self
- *= require mousetrap
  *= require_tree .
  */

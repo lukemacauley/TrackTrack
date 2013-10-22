@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require mousetrap
 //= require turbolinks
 //= require_tree .
+//= require elastic
