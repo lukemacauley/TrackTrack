@@ -2,13 +2,9 @@
 
   <section class="hello">
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag(:div, msg, class: "alert") %>
-  <% end %>
-
     <%= link_to image_tag("logo.png"), root_path, class: "logo-hello fadeIn" %>
 
-    <p class="fadeInUp">TrackTrack is the next level of tracking nutrition.</p>
+    <p class="fadeInUp">The next level of tracking nutrition.</p>
 
     <%= link_to "Sign Up", new_user_registration_path, class: "btn fadeIn" %>
     <%= link_to "Login", new_user_session_path, class: "btn login fadeIn" %>
