@@ -15,4 +15,4 @@
 //= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
-//= require elastic
+//= require autogrow

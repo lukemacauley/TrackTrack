@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
+ready = ->
+	$('textarea').autoGrow()
 	$('.alert').delay(2000).fadeOut(500)
-	$('#meal_description').elastic()
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
