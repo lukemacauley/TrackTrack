@@ -4,7 +4,7 @@ class MealsController < ApplicationController
 
   def index
     if user_signed_in?
-      @todays_meals = current_user.meals.today
+      @todays_meals = current_user.meals.today.order('created_at ASC')
       @particular_day = current_user.meals.for_date(2.days.ago)
       unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
         @remaining_calories = (current_user.bmr) - @todays_meals.sum(:calories)
