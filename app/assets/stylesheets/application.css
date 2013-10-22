@@ -12,4 +12,5 @@
  *= require basic
  *= require_self
  *= require_tree .
+ *= require tooltipster
  */
