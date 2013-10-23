@@ -24,6 +24,7 @@ $ui-select-height: $ui-button-height !default;
 // --- core: page variables -------------------------------------------------------------------------------------------
 
 $page-width: 800px !default;
+$form-width: 425px !default;
 
 // Basic CSS
 
@@ -175,6 +176,42 @@ header {
   }
 }
 
+.alert {
+  position: fixed;
+  top: 0px;
+  left: auto;
+  right: auto;
+  width: $page-width;
+  display: block;
+  text-align: center;
+  background-color: $ui-base-color;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: $ui-base-color-opposite;
+}
+
+.alert-form {
+  width: $form-width;
+}
+
+#error_explanation {
+  background-color: $ui-base-color;
+  color: $ui-base-color-opposite;
+  padding: 20px;
+  h2, h4 {
+    margin-top: 0;
+    font-size: 1em;
+    text-align: left;
+  }
+  ul {
+    list-style-type: disc;
+    padding: 0;
+    margin-bottom: 0;
+    list-style-position: inside;
+  }
+}
+
 // --- component: button -----------------------------------------------------------------------------------------------
 
 .btn {
@@ -200,6 +237,10 @@ header {
   &.active {
     background: $ui-base-color;
     color: $ui-base-color-opposite;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   // --- bt disabled ---------------------------------------------------------------------------------------------------
@@ -247,7 +288,7 @@ table {
 // --- component: table ------------------------------------------------------------------------------------------------
 
 .table {
-  margin: 18px 0 50px;
+  margin: 20px 0 50px;
   border-collapse: separate;
   border: $ui-border-width solid $ui-base-color;
 
@@ -322,8 +363,8 @@ table {
         }
         &.remaining {
           border-bottom: none;
-          background: $ui-base-color-opposite;
-          color: $ui-base-color;
+          //background: $ui-base-color-opposite;
+          //color: $ui-base-color;
         }
       }
 
@@ -331,7 +372,7 @@ table {
       {
         td
         {
-          border-top: none;
+          border-top: $ui-border-width solid $ui-base-color;
         }
       }
     }
@@ -383,6 +424,15 @@ $inputs: 'select,
     opacity: .35;
     cursor: default;
   }
+
+  &:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px $ui-base-color-opposite inset;
+        -webkit-text-fill-color: $ui-base-color;
+    }
+    &:-webkit-autofill:focus {
+       -webkit-box-shadow: 0 0 0 50px $ui-base-color-opposite inset;
+       -webkit-text-fill-color: $ui-base-color;
+    }
 }
 
 select

@@ -2,6 +2,10 @@
 
   <section class="hello">
 
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert") %>
+  <% end %>
+
     <%= link_to image_tag("logo.png"), root_path, class: "logo-hello fadeIn" %>
 
     <p class="fadeInUp">The development of character which speaks to the ability to follow through. The next level of tracking nutrition.</p>

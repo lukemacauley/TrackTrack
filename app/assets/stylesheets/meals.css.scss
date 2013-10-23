@@ -24,10 +24,16 @@ $ui-select-height: $ui-button-height !default;
 // --- core: page variables -------------------------------------------------------------------------------------------
 
 $page-width: 800px !default;
+$form-width: 425px !default;
+
+.hello {
+  max-width: $page-width;
+  margin: 50px auto 0;
+}
 
 .content {
   max-width: $page-width;
-  margin: 0 auto;
+  margin: 50px auto 0;
   h1 {
   	margin-bottom: 0;
   }
@@ -36,13 +42,13 @@ $page-width: 800px !default;
   }
   .add {
 		text-align: center;
-		margin: 18px 0;
+		margin: 16px 0;
 	}
 }
 
 .form {
-	max-width: 400px;
-  margin: 0 auto;
+	max-width: $form-width;
+  margin: 50px auto 16px;
   h1 {
   	margin-bottom: 0;
   }

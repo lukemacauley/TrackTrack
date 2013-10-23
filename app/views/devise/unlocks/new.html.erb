@@ -7,9 +7,9 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Resend Unlock Instructions" %></div>
+  <div><%= f.submit "Resend Instructions", class: "btn btn-large" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div><%= render "devise/shared/links" %></div>
 
 </section>

@@ -7,10 +7,10 @@ ready = ->
 
 	$('.alert').delay(2000).fadeOut(500)
 
-	$('.tooltip').tooltipster({ 
-		 animation: 'fade'
-		 maxWidth: 150
-	})
+	#$('.tooltip').tooltipster({ 
+	#	 animation: 'fade'
+	#	 maxWidth: 150
+	#})
 	
 	$('a.disabled').click -> return false
 
