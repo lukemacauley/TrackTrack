@@ -36,11 +36,9 @@
     <%= f.text_field :fats %>
   </div>
   <div class="actions">
-    <%= f.submit "Save" %>
+    <%= f.submit "Save", class: "btn btn-large" %>
+    <% if current_page?(edit_meal_path(@meal)) %>
+    <%= link_to "Delete", @meal, class: "btn btn-large", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
-  <% if current_page?(edit_meal_path(@meal)) %>
-    <div class="delete">
-      <%= link_to "Delete #{@meal.name}", @meal, method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
   <% end %>
 <% end %>

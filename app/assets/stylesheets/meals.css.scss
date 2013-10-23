@@ -1,78 +1,63 @@
-// Place all the styles related to the Meals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// --- compass: settings ----------------------------------------------------------------------------------------------
 
-section.index {
-	max-width: 650px;
-	margin: 75px auto;
-	h1, h3 {
+$legacy-support-for-ie: false;
+$legacy-support-for-mozilla: false;
+
+
+// --- compass --------------------------------------------------------------------------------------------------------
+
+@import "compass/css3";
+
+// --- core: variables ------------------------------------------------------------------------------------------------
+
+$ui-base-color: #000 !default;
+$ui-base-color-opposite: #fff !default;
+$ui-border-width: 2px !default;
+
+$ui-font-color: $ui-base-color !default;
+$ui-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+$ui-button-height: 35px !default;
+$ui-input-height: $ui-button-height !default;
+$ui-select-height: $ui-button-height !default;
+
+// --- core: page variables -------------------------------------------------------------------------------------------
+
+$page-width: 800px !default;
+
+.content {
+  max-width: $page-width;
+  margin: 0 auto;
+  h1 {
+  	margin-bottom: 0;
+  }
+  h3 {
+  	margin-top: 0;
+  }
+  .add {
 		text-align: center;
-	}
-	h1 {
-		font-size: 30px;
-	}
-	h3 {
-		margin-bottom: 13px;
-		line-height: 1.4em;
-		font-weight: 300;
-	}
-	table {
-		margin: 0 auto;
-		th {
-			padding: 3px 15px;
-			text-align: center;
-			font-size: 20px;
-			&:first-child {
-				text-align: left;
-				padding-left: 0;
-			}
-		}
-		td {
-			padding: 6px 15px;
-			text-align: center;
-			&:first-child {
-				text-align: left;
-				padding-left: 6px;
-			}
-		}
-		tr.value {
-			background-color: #eee;
-		}
-		tr.separator {
-			height: 10px;
-		}
-		tr.total-consumed, tr.total-remaining {
-			background-color: #fff;
-		}
-		td.consumed, td.remaining {
-			font-weight: bold;
-			font-size: 20px;
-			padding: 3px 0;
-		}
-	}
-	.add {
-		margin-top: 50px;
-		text-align: center;
-		font-size: 1.3em;
+		margin: 18px 0;
 	}
 }
 
-.delete {
-	margin-top: 13px;
-}
-
-#error_explanation {
-	background-color: #f1f1f1;
-	padding: 10px;
-	margin-bottom: 20px;
-	h4 {
-		margin-top: 0;
-	}
-}
-
-.error {
-	list-style-type: disc;
-	padding: 0;
-	margin-bottom: 0;
-	list-style-position: inside;
+.form {
+	max-width: 400px;
+  margin: 0 auto;
+  h1 {
+  	margin-bottom: 0;
+  }
+  div {
+  	padding-top: 16px;
+  	font-weight: bold;
+  	&:first-child {
+  		padding-top: 0;
+  	}
+  }
+  textarea {
+  	padding: 8px;
+  	resize: none;
+  }
+  .actions {
+  	text-align: center;
+  }
 }

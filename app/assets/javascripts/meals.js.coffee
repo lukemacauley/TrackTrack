@@ -4,12 +4,15 @@
 
 ready = ->
 	$('textarea').autoGrow()
+
 	$('.alert').delay(2000).fadeOut(500)
 
 	$('.tooltip').tooltipster({ 
-		 animation: 'fade',
+		 animation: 'fade'
 		 maxWidth: 150
 	})
+	
+	$('a.disabled').click -> return false
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

@@ -1,85 +1,417 @@
+// --- compass: settings ----------------------------------------------------------------------------------------------
+
+$legacy-support-for-ie: false;
+$legacy-support-for-mozilla: false;
+
+
+// --- compass --------------------------------------------------------------------------------------------------------
+
+@import "compass/css3";
+
+// --- core: variables ------------------------------------------------------------------------------------------------
+
+$ui-base-color: #000 !default;
+$ui-base-color-opposite: #fff !default;
+$ui-border-width: 2px !default;
+
+$ui-font-color: $ui-base-color !default;
+$ui-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+$ui-button-height: 35px !default;
+$ui-input-height: $ui-button-height !default;
+$ui-select-height: $ui-button-height !default;
+
+// --- core: page variables -------------------------------------------------------------------------------------------
+
+$page-width: 800px !default;
+
+// Basic CSS
+
 html {
-	font-size: 10px; // 1em = 10px
+  font-size: 10px;
 }
 
 body {
-		font-size: 1.8em;
-    font-weight: 300;
-    background-color: #fff;
-    color: #2b2b2b;
+  font-size: 1.6em;
+  background-color: #FFF;
+  color: #000;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #2b2b2b;
-    margin-top: 25px;
-    margin-bottom: 20px;
+h1 {
+  padding: 15px 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+  font-weight: bold;
+  text-align: center;
 }
 
-h1 a, h2 a, h3 a, h4, a h5 a, h6 a {
-    color: #2b2b2b;
+h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  a {
+    padding: 10px 0;
+  }
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 p {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #2b2b2b;
-    font-weight: 300;
-    img {
-    	margin: 0;
-    }
-}
-
-ul {
-	list-style-type: none;
+  line-height: 1.4em;
+  padding: .3em;
 }
 
 a {
-	color: #2b2b2b;
+  color: $ui-base-color;
   text-decoration: none;
-  outline: 0;
-	transition-property: all;
-	transition-duration: .5s;
-	-webkit-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
-	-moz-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
-	-ms-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
-	-o-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
-	transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
-  &:link, &:visited, &:hover, &:active {
-  	text-decoration: none;
-  }
-	&:hover, &:focus {
-		text-decoration: none;
-	}
-}
+  transition-property: all;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -moz-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -ms-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -o-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  &.disabled {
+    opacity: .3;
+    cursor: default;
 
-.btn {
-  padding: 7px 22px;
-  background-color: #2b2b2b;
-  border: 1px solid #2b2b2b;
-  color: #fff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  &:hover {
-    color: #2b2b2b;
-    background-color: #fff;
+    &:hover {
+      background: inherit;
+      color: inherit;
+    }
   }
 }
 
-em {
-    font-style: italic;
-}
-
-small {
-  font-size: 70%;
+ul {
+  list-style-type: none;
 }
 
 hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+}
+
+strong {
+  font-weight: bold;
+}
+
+// Header CSS -------------------------------------------------------------------
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 3px;
-  background-color: #ccc;
-  border: none;
-  margin: 13px auto;
+  height: 65px;
+  z-index: 10;
+  nav {
+    display: inline;
+    float: left;
+    width: 100%;
+    ul {
+      padding-left: 0;
+      padding-right: 0;
+      display: inline-table;
+      li {
+        display: inline-block;
+        margin-left: 50px;
+        .logo {
+          height: 10px;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  ul.profile {
+    display: inline-table;
+    position: relative;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+    li {
+      margin-right: 50px;
+      text-align: right;
+      ul.profile_links {
+        display: none;
+        li {
+          width: 175px;
+          display: block;
+          text-align: right;
+          a {
+            color: #2b2b2b;
+            margin-right: -50px;
+            &:hover {
+              color: #2b2b2b;
+            }
+          }
+        }
+      }
+      &:hover > ul {
+        display: block;
+      }
+    }
+  }
+  ul.login {
+    float: right;
+    li {
+      display: inline-block;
+      &:last-child {
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+// --- component: button -----------------------------------------------------------------------------------------------
+
+.btn {
+  height: $ui-button-height;
+  position: relative;
+  padding: 0.55em 1em 0.5em;
+  margin: 0;
+  font: bold 12px/1.5em $ui-font-family;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  border: $ui-border-width solid $ui-base-color;
+  color: $ui-base-color;
+  background: transparent;
+  @include box-sizing(border-box);
+  @include border-radius(0);
+  @include appearance(none);
+
+  &:hover,
+  &.active {
+    background: $ui-base-color;
+    color: $ui-base-color-opposite;
+  }
+
+  // --- bt disabled ---------------------------------------------------------------------------------------------------
+
+  &.disabled {
+    opacity: .3;
+    cursor: default;
+
+    &:hover {
+      background: inherit;
+      color: inherit;
+    }
+  }
+
+  // --- small ---------------------------------------------------------------------------------------------------------
+
+  &.btn-small {
+    font-size: 10px;
+    height: 30px;
+  }
+
+  // --- medium --------------------------------------------------------------------------------------------------------
+
+  &.btn-medium {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  // --- large ---------------------------------------------------------------------------------------------------------
+
+  &.btn-large {
+    font-size: 16px;
+    height: 45px;
+  }
+}
+
+// --- component: table (global) ---------------------------------------------------------------------------------------
+
+table {
+  width: 100%;
+  position: relative;
+  line-height: 1;
+}
+
+// --- component: table ------------------------------------------------------------------------------------------------
+
+.table {
+  margin: 18px 0 50px;
+  border-collapse: separate;
+  border: $ui-border-width solid $ui-base-color;
+
+  thead
+  {
+    tr
+    {
+      th
+      {
+        padding: 10px 8px;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: $ui-base-color;
+        color: $ui-base-color-opposite;
+        border-bottom: $ui-border-width solid $ui-base-color;
+        border-left: $ui-border-width solid $ui-base-color;
+
+        &:first-child
+        {
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  tbody
+  {
+    tr
+    {
+      td
+      {
+        padding: 9px;
+        background: $ui-base-color-opposite;
+        border-left: $ui-border-width solid $ui-base-color;
+        border-top: $ui-border-width solid $ui-base-color;
+        text-align: center;
+
+        &:first-child
+        {
+          border-left: none;
+        }
+      }
+
+      &:first-child
+      {
+        td
+        {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  tfoot
+  {
+    tr
+    {
+      td
+      {
+        padding: 10px 8px;
+        font-weight: bold;
+        background: $ui-base-color;
+        color: $ui-base-color-opposite;
+        //border-bottom: $ui-border-width solid $ui-base-color-opposite;
+        //border-left: $ui-border-width solid $ui-base-color-opposite;
+        text-align: center;
+
+        &:first-child
+        {
+          border-left: none;
+          text-transform: uppercase;
+        }
+        &.remaining {
+          border-bottom: none;
+          background: $ui-base-color-opposite;
+          color: $ui-base-color;
+        }
+      }
+
+      &:first-child
+      {
+        td
+        {
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+
+// --- component: inputs variables ------------------------------------------------------------------------------------
+
+// $inputs: 'input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]), textarea, select';
+$inputs: 'select,
+          textarea,
+          input[type="text"],
+          input[type="password"],
+          input[type="datetime"],
+          input[type="datetime-local"],
+          input[type="date"],
+          input[type="month"],
+          input[type="time"],
+          input[type="week"],
+          input[type="number"],
+          input[type="email"],
+          input[type="url"],
+          input[type="search"],
+          input[type="tel"],
+          input[type="color"]';
+
+
+// --- component: inputs ----------------------------------------------------------------------------------------------
+
+#{$inputs}
+{
+  width: 100%;
+  height: $ui-input-height;
+  padding: 3px 8px;
+  margin: 0 auto;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  font: 1em $ui-font-family;
+  background: $ui-base-color-opposite;
+  color: $ui-base-color;
+  border: $ui-border-width solid $ui-base-color;
+  @include box-sizing(border-box);
+  @include border-radius(0);
+  @include appearance(none);
+
+  &[disabled]
+  {
+    opacity: .35;
+    cursor: default;
+  }
+}
+
+select
+{
+  width: 100%;
+  height: 53px;
+  @include border-radius(0);
+  @include box-sizing(border-box);
+
+  /* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+  {
+    padding-right: 25px;
+    background: url(image_path("arrow.png")) no-repeat 100% 50% $ui-base-color-opposite;
+    -webkit-appearance: none;
+  }
+}
+
+textarea {
+  max-width: 100%;
+}
+
+// Responsive
+
+@media screen and (max-width: 640px) {
+  /* to avoid the adjustment of fonts on iOS devices you should keep this line */
+  * { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+
+  .content {
+    min-width: 440px;
+  }
 }

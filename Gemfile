@@ -27,6 +27,7 @@ gem 'ledermann-rails-settings', require: 'rails-settings'
 gem 'unicorn'
 gem "simple_calendar", "~> 0.1.9"
 gem 'newrelic_rpm'
+gem "compass-rails", "~> 2.0.alpha.0"
 
 group :doc do
   gem 'sdoc', require: false

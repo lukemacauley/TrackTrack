@@ -1,4 +1,4 @@
-<section class="devise">
+<section class="form">
   <h1>Edit Your Profile</h1>
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -16,7 +16,7 @@
     <div>Fat Percentage of Overall Calories (%)<br />
     <%= f.text_field :fat_percentage, autocomplete: :off %></div>
 
-    <div><%= f.submit "Update" %></div>
+    <div class="actions"><%= f.submit "Update", class: "btn btn-large" %></div>
   <% end %>
 
 </section>
