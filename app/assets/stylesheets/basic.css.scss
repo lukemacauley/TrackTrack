@@ -48,6 +48,7 @@ h1 {
 
 h2 {
   text-align: center;
+  letter-spacing: -1px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -176,20 +177,35 @@ header {
   }
 }
 
-.alert {
+.alert-container {
   position: fixed;
   top: 0px;
-  left: auto;
-  right: auto;
-  width: $page-width;
-  display: block;
-  text-align: center;
-  background-color: $ui-base-color;
-  padding: 10px 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: $ui-base-color-opposite;
+  width: 100%;
+  .alert {
+    margin: 0 auto;
+    width: $page-width;
+    text-align: center;
+    background-color: $ui-base-color;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: $ui-base-color-opposite;
+  }
 }
+
+.alert-index {
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    width: $page-width;
+    text-align: center;
+    background-color: $ui-base-color;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: $ui-base-color-opposite;
+  }
 
 .alert-form {
   width: $form-width;

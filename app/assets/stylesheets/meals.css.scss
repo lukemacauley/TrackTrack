@@ -29,6 +29,14 @@ $form-width: 425px !default;
 .hello {
   max-width: $page-width;
   margin: 50px auto 0;
+  .logo {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  div {
+    text-align: center;
+    margin-top: 65px;
+  }
 }
 
 .content {
