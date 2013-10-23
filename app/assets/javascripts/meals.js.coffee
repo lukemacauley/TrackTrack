@@ -5,7 +5,7 @@
 ready = ->
 	$('textarea').autoGrow()
 
-	$('.alert').delay(2000).fadeOut(500)
+	$('.alert, .alert-index').delay(2000).fadeOut(500)
 
 	#$('.tooltip').tooltipster({ 
 	#	 animation: 'fade'
