@@ -10,9 +10,7 @@
 </head>
 <body>
 
-<% unless @no_header %>
-	<%= render 'layouts/header' %>
-<% end %>
+<%= render 'layouts/header' unless @no_header %>
 
 <%= yield %>
 
