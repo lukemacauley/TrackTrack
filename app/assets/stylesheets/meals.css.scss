@@ -29,6 +29,10 @@ $form-width: 425px !default;
 .hello {
   max-width: $page-width;
   margin: 50px auto 0;
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
   .logo {
     text-align: center;
     margin-bottom: 50px;
@@ -36,6 +40,12 @@ $form-width: 425px !default;
   div {
     text-align: center;
     margin-top: 65px;
+  }
+  h1 {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
   }
 }
 
