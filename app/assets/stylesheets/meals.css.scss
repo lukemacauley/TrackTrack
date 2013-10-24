@@ -10,7 +10,7 @@ $legacy-support-for-mozilla: false;
 
 // --- core: variables ------------------------------------------------------------------------------------------------
 
-$ui-base-color: #000 !default;
+$ui-base-color: #1d1d1d !default;
 $ui-base-color-opposite: #fff !default;
 $ui-border-width: 2px !default;
 
@@ -25,6 +25,8 @@ $ui-select-height: $ui-button-height !default;
 
 $page-width: 800px !default;
 $form-width: 425px !default;
+
+// ---- pages
 
 .hello {
   max-width: $page-width;

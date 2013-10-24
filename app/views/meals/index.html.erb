@@ -1,10 +1,10 @@
-<% unless user_signed_in? %>
-
 <div class="alert-container">
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert") %>
   <% end %>
 </div>
+
+<% unless user_signed_in? %>
 
   <section class="hello">
 
@@ -24,10 +24,6 @@
 <% else %>
 
 <section class="content">
-
-<% flash.each do |name, msg| %>
-  <%= content_tag(:div, msg, class: "alert-index") %>
-<% end %>
      
     <h1><%= link_to "&#171".html_safe, yesterday_path %> <%= Time.zone.today.strftime('%A, %d %B %Y') %> <%= link_to "&#187".html_safe, root_path, class: "disabled" %></h1>
      
