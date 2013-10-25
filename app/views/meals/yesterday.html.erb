@@ -6,7 +6,7 @@
 
 <section class="content">
      
-    <h1><%= link_to "&#171".html_safe, yesterday_path, class: "disabled" %> <%= Date.yesterday.strftime('%A, %d %B %Y') %> <%= link_to "&#187".html_safe, root_path %></h1>
+    <h1><%= link_to "&#171".html_safe, yesterday_path, class: "disabled" %> (<%= Date.yesterday.strftime('%A, %d %B %Y') %>) <%= link_to "&#187".html_safe, root_path %></h1>
      
     <% if current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
       <h3><%= link_to "Please Set Your Stats", account_profile_path %></h3>

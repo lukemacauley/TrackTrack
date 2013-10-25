@@ -32,10 +32,6 @@ class MealsController < ApplicationController
     end
   end
 
-  def show
-    render action: 'yesterday'  
-  end
-
   def favourites
     @favourites = current_user.meals.where(favourite: true)
   end
