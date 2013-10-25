@@ -21,13 +21,13 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'stringex'
 gem 'simple_form'
-gem 'mousetrap-rails'
 gem 'jquery-ui-rails'
 gem 'ledermann-rails-settings', require: 'rails-settings'
 gem 'unicorn'
 gem "simple_calendar", "~> 0.1.9"
 gem 'newrelic_rpm'
 gem "compass-rails", "~> 2.0.alpha.0"
+gem 'mousetrap-rails'
 
 group :doc do
   gem 'sdoc', require: false

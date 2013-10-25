@@ -154,6 +154,11 @@ header {
         border: $ui-border-width solid $ui-base-color;
         padding: 12px 16px;
         margin-top: 16px;
+        hr {
+          position: relative;
+          margin: 12px -16px;
+          width: 139px;
+        }
         &:after, &:before {
           bottom: 100%;
           border: solid transparent;
@@ -521,14 +526,14 @@ textarea {
     #{headers(all)} {
       padding: 0;
       margin: 0;
-      font: bold 12px/1.5em $ui-font-family;
+      font: bold 16px $ui-font-family;
       text-transform: uppercase;
     }
 
     .actions {
       position: absolute;
       top: 2px;
-      right: 5px;
+      right: 2px;
 
       .btn {
         color: $ui-base-color-opposite;
@@ -552,7 +557,7 @@ textarea {
     .actions {
       .btn {
         height: 30px;
-        font-size: 10px;
+        font: bold 12px $ui-font-family;
         vertical-align: middle;
       }
     }

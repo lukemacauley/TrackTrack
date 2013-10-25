@@ -11,6 +11,17 @@ ready = ->
 	#	 animation: 'fade'
 	#	 maxWidth: 150
 	#})
+
+	$('.shortcuts-box').hide()
+	$('.body-fade').hide()
+
+	$('.shortcuts').click ->
+		$('.shortcuts-box').fadeIn(500)
+		$('.body-fade').fadeIn(300)
+
+	$('.body-fade, .close').click ->
+		$('.body-fade').fadeOut(500)
+		$('.shortcuts-box').fadeOut(300)
 	
 	$('.disabled').click -> return false
 
