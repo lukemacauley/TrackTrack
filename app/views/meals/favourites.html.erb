@@ -1,8 +1,14 @@
 <section class="content">
    
   <h1>Favourites</h1>
+
+  <hr>
      
-<% unless @favourites.blank? %>
+<% if @favourites.blank? %>
+
+  <h3>You can add Favourites the next time you add a meal.</h3>
+
+<% else %>
      
   <table class="table">
     <thead>
