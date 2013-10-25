@@ -36,6 +36,10 @@ class MealsController < ApplicationController
     render action: 'yesterday'  
   end
 
+  def favourites
+    @favourites = current_user.meals.where(favourite: true)
+  end
+
   def new
     @meal = current_user.meals.build
   end
@@ -81,7 +85,7 @@ class MealsController < ApplicationController
     end
 
     def meal_params
-      params.require(:meal).permit(:name, :description, :calories, :protein, :carbohydrates, :fats, :start_time, :end_time)
+      params.require(:meal).permit(:name, :description, :calories, :protein, :carbohydrates, :fats, :start_time, :end_time, :favourite)
     end
 
     def carbs_calculator

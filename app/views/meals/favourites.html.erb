@@ -1,0 +1,28 @@
+<section class="content">
+   
+  <h1>Favourites</h1>
+     
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Protein</th>
+        <th>Carbs</th>
+        <th>Fats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @favourites.each do |meal| %>
+        <tr class="favourites">
+          <td><%= link_to meal.name, edit_meal_path(meal) %></td>
+          <td><%= "#{meal.calories}kcal" %></td>
+          <td><%= "#{meal.protein}g" %></td>
+          <td><%= "#{meal.carbohydrates}g" %></td>
+          <td><%= "#{meal.fats}g" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+</section>

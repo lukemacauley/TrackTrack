@@ -20,6 +20,7 @@ Tracktrack::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
       get 'yesterday' => 'meals#yesterday'
+      get 'favourites' => 'meals#favourites'
 
       get 'add' => 'meals#new', as: :new_meal
       get ':id/edit' => 'meals#edit', as: :edit_meal

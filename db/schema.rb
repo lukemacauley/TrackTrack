@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022231553) do
+ActiveRecord::Schema.define(version: 20131025011612) do
 
   create_table "meals", force: true do |t|
     t.integer  "calories",      default: 0, null: false
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20131022231553) do
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
+    t.boolean  "favourite"
   end
+
+  add_index "meals", ["favourite"], name: "index_meals_on_favourite"
 
   create_table "settings", force: true do |t|
     t.string   "var",         null: false

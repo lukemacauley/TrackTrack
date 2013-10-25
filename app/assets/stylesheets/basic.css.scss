@@ -355,6 +355,14 @@ table {
     }
   }
 
+  .favourites {
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+
   tfoot
   {
     tr
