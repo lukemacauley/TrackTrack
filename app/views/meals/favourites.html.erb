@@ -2,6 +2,8 @@
    
   <h1>Favourites</h1>
      
+<% unless @favourites.blank? %>
+     
   <table class="table">
     <thead>
       <tr>
@@ -24,5 +26,7 @@
       <% end %>
     </tbody>
   </table>
+
+<% end %>
   
 </section>
