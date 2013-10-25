@@ -5,6 +5,7 @@
 		<% if user_signed_in? %>
 		</ul>
 		<ul class="profile">
+			<span class="arrow"><%= image_tag("arrow.png") %></span>
 			<li><%= link_to current_user.name, 'javascript:void(0)' %>
 				<ul class="profile_links">
 					<li><%= link_to "Edit Profile", profile_path, data: { keybinding: "p" } %></li>
@@ -27,3 +28,16 @@
 		<% end %>	
 	</nav>
 </header>
+
+<div class="body-fade"></div>
+
+<div class="box shortcuts-box">
+	<div class="box-head">
+		<h3>Keyboard Shortcuts</h3>
+		<div class="actions">
+			<%= link_to "Close", 'javascript:void(0)' , class: "btn close" %>
+		</div>
+	</div>
+	<div class="box-body">
+	</div>
+</div>

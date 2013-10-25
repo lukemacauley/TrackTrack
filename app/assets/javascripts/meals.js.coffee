@@ -12,9 +12,6 @@ ready = ->
 	#	 maxWidth: 150
 	#})
 
-	$('.shortcuts-box').hide()
-	$('.body-fade').hide()
-
 	$('.shortcuts').click ->
 		$('.shortcuts-box').fadeIn(500)
 		$('.body-fade').fadeIn(300)

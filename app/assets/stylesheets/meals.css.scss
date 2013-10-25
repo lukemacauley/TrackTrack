@@ -96,6 +96,7 @@ $form-width: 425px !default;
   height: 500px;
   margin: -250px -250px;
   z-index: 100;
+  display: none;
 }
 
 .body-fade {
@@ -106,6 +107,7 @@ $form-width: 425px !default;
   height: 100%;
   z-index: 99;
   background-color: rgba(255,255,255,0.7);
+  display: none;
 }
 
 
