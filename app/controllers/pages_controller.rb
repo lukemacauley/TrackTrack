@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
-  def faq
+  def diet
+  end
+
+  def diet
+  end
+
+  def help
   end
 end

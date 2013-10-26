@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
+
 	$('textarea').autoGrow()
 
 	$('.alert').delay(2000).fadeOut(500)

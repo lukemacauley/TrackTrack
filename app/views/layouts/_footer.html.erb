@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+	<footer>
+		<ul>
+			<li><%= link_to "Diet", diet_path, data: { keybinding: "d" } %></li>
+			<li><%= link_to "Cardio", cardio_path, data: { keybinding: "c" } %></li>
+		</ul>
+	</footer>
+<% end %>
