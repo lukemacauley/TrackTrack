@@ -32,8 +32,8 @@
     <% else %>
       <h3>
         <%= link_to "Your protein intake is #{current_user.protein_intake}g &#8212; #{(current_user.protein_intake.to_f / current_user.weight).round(2)}&#215 body weight (#{current_user.weight}lb)".html_safe, profile_path %><br>
-        <%= link_to "Your carb intake is #{@carb_grams}g &#8212; #{(@carb_grams * 400.to_f / current_user.bmr).round(1)}% of #{current_user.bmr}kcal".html_safe, profile_path %><br>
-        <%= link_to "Your fat intake is #{@fat_grams}g &#8212; #{current_user.fat_percentage}% of #{current_user.bmr}kcal".html_safe, profile_path %>
+        <%= link_to "Your carb intake is #{@carb_grams}g &#8212; #{(@carb_grams * 400.to_f / current_user.bmr).round(1)}% of #{current_user.bmr} kcal".html_safe, profile_path %><br>
+        <%= link_to "Your fat intake is #{@fat_grams}g &#8212; #{current_user.fat_percentage}% of #{current_user.bmr} kcal".html_safe, profile_path %>
       </h3>
     <% end %>
      
@@ -59,7 +59,7 @@
           <% else %>
             <td><%= link_to meal.name, edit_meal_path(meal), class: "tooltip", title: "#{meal.description}" %></td>
           <% end %>
-            <td><%= "#{meal.calories}kcal" %></td>
+            <td><%= "#{meal.calories} kcal" %></td>
             <td><%= "#{meal.protein}g" %></td>
             <td><%= "#{meal.carbohydrates}g" %></td>
             <td><%= "#{meal.fats}g" %></td>
@@ -69,7 +69,7 @@
     <tfoot>
       <tr>
         <td>Consumed</td>
-        <td><%= "#{@todays_meals.sum(:calories)}kcal" %></td>
+        <td><%= "#{@todays_meals.sum(:calories)} kcal" %></td>
         <td><%= "#{@todays_meals.sum(:protein)}g" %></td>
         <td><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
         <td><%= "#{@todays_meals.sum(:fats)}g" %></td>
@@ -77,7 +77,7 @@
       <% unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank? %>
         <tr>
           <td class="remaining">Remaining</td>
-          <td class="remaining"><%= "#{@remaining_calories}kcal" %></td>
+          <td class="remaining"><%= "#{@remaining_calories} kcal" %></td>
           <td class="remaining"><%= "#{@remaining_protein}g" %></td>
           <td class="remaining"><%= "#{@remaining_carbs}g" %></td>
           <td class="remaining"><%= "#{@remaining_fats}g" %></td>
