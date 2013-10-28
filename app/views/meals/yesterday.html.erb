@@ -19,6 +19,8 @@
     <% end %>
      
     <hr>
+
+    <% unless current_user.meals.yesterday.blank? %>
   
   <table class="table">
     <thead>
@@ -38,7 +40,7 @@
           <% else %>
             <td><%= link_to meal.name, edit_meal_path(meal), class: "tooltip", title: "#{meal.description}" %></td>
           <% end %>
-            <td><%= "#{meal.calories} kcal" %></td>
+            <td><%= "#{(meal.protein * 4) + (meal.carbohydrates * 4) + (meal.fats * 9)} kcal" %></td>
             <td><%= "#{meal.protein}g" %></td>
             <td><%= "#{meal.carbohydrates}g" %></td>
             <td><%= "#{meal.fats}g" %></td>
@@ -48,7 +50,7 @@
     <tfoot>
       <tr>
         <td>Consumed</td>
-        <td><%= "#{@yesterdays_meals.sum(:calories)} kcal" %></td>
+        <td><%= "#{@total_calories} kcal" %></td>
         <td><%= "#{@yesterdays_meals.sum(:protein)}g" %></td>
         <td><%= "#{@yesterdays_meals.sum(:carbohydrates)}g" %></td>
         <td><%= "#{@yesterdays_meals.sum(:fats)}g" %></td>
@@ -64,6 +66,12 @@
       <% end %>
     </tfoot>
   </table>
+
+  <% else %>
+  
+  <h3>No meals were added yesterday.</h3>
+
+  <% end %>
   
   <div class="add"><%= link_to "Add Meal", new_meal_path, class: "btn btn-large disabled" %></div>
   

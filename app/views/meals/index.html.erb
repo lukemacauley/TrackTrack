@@ -59,7 +59,7 @@
           <% else %>
             <td><%= link_to meal.name, edit_meal_path(meal), class: "tooltip", title: "#{meal.description}" %></td>
           <% end %>
-            <td><%= "#{meal.calories} kcal" %></td>
+            <td><%= "#{(meal.protein * 4) + (meal.carbohydrates * 4) + (meal.fats * 9)} kcal" %></td>
             <td><%= "#{meal.protein}g" %></td>
             <td><%= "#{meal.carbohydrates}g" %></td>
             <td><%= "#{meal.fats}g" %></td>
@@ -69,7 +69,7 @@
     <tfoot>
       <tr>
         <td>Consumed</td>
-        <td><%= "#{@todays_meals.sum(:calories)} kcal" %></td>
+        <td><%= "#{@total_calories} kcal" %></td>
         <td><%= "#{@todays_meals.sum(:protein)}g" %></td>
         <td><%= "#{@todays_meals.sum(:carbohydrates)}g" %></td>
         <td><%= "#{@todays_meals.sum(:fats)}g" %></td>

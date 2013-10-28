@@ -20,28 +20,21 @@
     <%= f.text_area :description, placeholder: "Optional" %>
   </div>
   <div class="field">
-    <%= f.label :calories %> (kcal)<br>
-    <%= f.text_field :calories %>
-  </div>
-  <div class="field">
     <%= f.label :protein %> (g)<br>
     <%= f.text_field :protein %>
   </div>
   <div class="field">
-    <%= f.label :carbohydrates %> (g)<br>
+    Carbs (g)<br>
     <%= f.text_field :carbohydrates %>
   </div>
   <div class="field">
     <%= f.label :fats %> (g)<br>
     <%= f.text_field :fats %>
   </div>
-  <div class="field">
-    <%= f.check_box :favourite %> Add to Favourites?
-  </div>
   <div class="actions">
     <%= f.submit "Save", class: "btn btn-large" %>
     <% if current_page?(edit_meal_path(@meal)) %>
-    <%= link_to "Delete", @meal, class: "btn btn-large", method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete", @meal, class: "btn btn-large", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   </div>
-  <% end %>
 <% end %>

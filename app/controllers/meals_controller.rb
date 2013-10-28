@@ -6,7 +6,8 @@ class MealsController < ApplicationController
     if user_signed_in?
       @todays_meals = current_user.meals.today.order('created_at ASC')
       unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
-        @remaining_calories = (current_user.bmr) - @todays_meals.sum(:calories)
+        @total_calories = (@todays_meals.sum(:protein) * 4) + (@todays_meals.sum(:carbohydrates) * 4) + (@todays_meals.sum(:fats) * 9)
+        @remaining_calories = (current_user.bmr) - @total_calories
         @remaining_protein = current_user.protein_intake - @todays_meals.sum(:protein)
         @remaining_fats = (current_user.bmr * current_user.fat_percentage / 900).to_i - @todays_meals.sum(:fats)
         @remaining_carbs = carbs_calculator
@@ -22,7 +23,8 @@ class MealsController < ApplicationController
     if user_signed_in?
       @yesterdays_meals = current_user.meals.yesterday.order('created_at ASC')
       unless current_user.bmr.blank? || current_user.weight.blank? || current_user.protein_intake.blank? || current_user.fat_percentage.blank?
-        @remaining_calories = (current_user.bmr) - @yesterdays_meals.sum(:calories)
+        @total_calories = (@yesterdays_meals.sum(:protein) * 4) + (@yesterdays_meals.sum(:carbohydrates) * 4) + (@yesterdays_meals.sum(:fats) * 9)
+        @remaining_calories = (current_user.bmr) - @total_calories
         @remaining_protein = current_user.protein_intake - @yesterdays_meals.sum(:protein)
         @remaining_fats = (current_user.bmr * current_user.fat_percentage / 900).to_i - @yesterdays_meals.sum(:fats)
         @remaining_carbs = carbs_calculator_yes
