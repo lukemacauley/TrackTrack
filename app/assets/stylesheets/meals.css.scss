@@ -10,8 +10,9 @@ $legacy-support-for-mozilla: false;
 
 // --- core: variables ------------------------------------------------------------------------------------------------
 
-$ui-base-color: #1d1d1d !default;
+$ui-base-color: #2b2b2b !default;
 $ui-base-color-opposite: #fff !default;
+$ui-base-color-hover: #838383 !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
@@ -120,6 +121,3 @@ $form-width: 425px !default;
   background-color: rgba(255,255,255,0.7);
   display: none;
 }
-
-
-
