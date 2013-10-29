@@ -1,3 +1,56 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// --- compass: settings ----------------------------------------------------------------------------------------------
+
+$legacy-support-for-ie: false;
+$legacy-support-for-mozilla: false;
+
+
+// --- compass --------------------------------------------------------------------------------------------------------
+
+@import "compass/css3";
+
+// --- core: variables ------------------------------------------------------------------------------------------------
+
+$ui-base-color: #2b2b2b !default;
+$ui-base-color-opposite: #fff !default;
+$ui-base-color-hover: #838383 !default;
+$ui-border-width: 2px !default;
+
+$ui-font-color: $ui-base-color !default;
+$ui-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+$ui-button-height: 35px !default;
+$ui-input-height: $ui-button-height !default;
+$ui-select-height: $ui-button-height !default;
+
+// --- core: page variables -------------------------------------------------------------------------------------------
+
+$page-width: 800px !default;
+$form-width: 425px !default;
+$text-width: 550px !default;
+
+// ---- pages
+
+section.pages {
+	width: $text-width;
+	margin: 75px auto;
+	h2, h3, h4, h5, h6 {
+		text-align: left;
+	}
+	p {
+		padding: 0;
+		line-height: 1.5em;
+	}
+	li {
+		list-style: disc;
+		//list-style-position: inside;
+		padding-left: 17px;
+		line-height: 1.4em;
+	}
+	ul {
+		-webkit-padding-start: 17px;
+	}
+}

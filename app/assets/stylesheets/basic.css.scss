@@ -50,7 +50,7 @@ h1 {
 h2 {
   text-align: center;
   letter-spacing: -1px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -104,6 +104,13 @@ hr {
   border: 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #fff;
+}
+
+blockquote {
+  border-left: 6px solid $ui-base-color;
+  margin-left: 0;
+  padding-left: 24px;
+  font-style: italic;
 }
 
 strong {
