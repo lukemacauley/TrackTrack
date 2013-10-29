@@ -9,6 +9,7 @@ The next level of tracking nutrition.
 - Add favourites dropdown box in Add Meal, when selected input that data but don't save.
 - Sort homepage view.
 - Add Help and Diet pages.
+- Add Keyboard shortcuts popup.
 - ~~Add bodyweight option in lbs & kg~~
 
 #### Medium Term:

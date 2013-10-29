@@ -17,6 +17,7 @@ $legacy-support-for-mozilla: false;
 $ui-base-color: #2b2b2b !default;
 $ui-base-color-opposite: #fff !default;
 $ui-base-color-hover: #838383 !default;
+$ui-second-color: #4d4d4d !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
@@ -43,14 +44,21 @@ section.pages {
 	p {
 		padding: 0;
 		line-height: 1.5em;
+		color: $ui-second-color;
 	}
 	li {
 		list-style: disc;
 		//list-style-position: inside;
 		padding-left: 17px;
 		line-height: 1.4em;
+		color: $ui-second-color;
 	}
 	ul {
 		-webkit-padding-start: 17px;
+	}
+	blockquote {
+		p {
+			color: $ui-base-color;
+		}
 	}
 }
