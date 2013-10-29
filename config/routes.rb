@@ -1,13 +1,13 @@
 Tracktrack::Application.routes.draw do
 
-  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
+  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'signout', confirmation: 'verification', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
   resources :meals, only: :create
 
   get 'yesterday' => 'meals#yesterday'
 
   devise_scope :user do 
-    get "profile" => "devise/registrations#profile"
-    get "settings" => "devise/registrations#edit"
+    get "settings/profile" => "devise/registrations#profile", as: :profile
+    get "settings/account" => "devise/registrations#edit", as: :settings
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

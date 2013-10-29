@@ -6,6 +6,8 @@
 
 <% unless user_signed_in? %>
 
+  <% provide(:title, 'The next level of tracking nutrition') %>
+
   <section class="hello">
 
     <div class="logo"><%= link_to image_tag("logo.png"), root_path, class: "logo-hello fadeIn" %></div>
@@ -24,6 +26,8 @@
 <% else %>
 
 <section class="content">
+
+    <% provide(:title, "#{current_user.name}") %>
      
     <h1><%= link_to "&#8592".html_safe, yesterday_path, data: { keybinding: "y" } %> <%= Time.zone.today.strftime('%A, %d %B %Y') %> <%= link_to "&#8594".html_safe, root_path, class: "disabled" %></h1>
      
