@@ -110,6 +110,10 @@ strong {
   font-weight: bold;
 }
 
+small {
+  font-size: 0.8em;
+}
+
 // Header CSS -------------------------------------------------------------------
 
 header {
@@ -118,6 +122,8 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
+  background-color: rgba(255,255,255,0.9);
+  height: 66px;
   nav {
     display: inline;
     float: left;
@@ -266,14 +272,23 @@ footer {
   z-index: 10;
   text-align: center;
   border-top: 1px solid #ddd;
-  background-color: #FFF;
+  background-color: rgba(255,255,255,0.9);
     ul {
       padding: 0;
-      font-size: 16px;
-      font-weight: bold;
+      -webkit-margin-before: 0.8em;
+      -webkit-margin-after: 0.8em;
       li {
         display: inline-block;
         margin: auto 25px;
+        font-size: 0.8em;
+        color: $ui-base-color-hover;
+        font-weight: normal;
+        a {
+          color: $ui-base-color-hover;
+          &:hover {
+            color: #cbcbcb;
+          }
+        }
       }
     }
   }
