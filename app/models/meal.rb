@@ -17,5 +17,5 @@ class Meal < ActiveRecord::Base
 	validates :fats, numericality: { only_integer: true }
 
 	belongs_to :user
-
+	
 end

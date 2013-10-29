@@ -2,11 +2,11 @@
 	<footer>
 		<ul class="left">
 			<!--<li><%# "&#169; #{Time.now.year} TrackTrack".html_safe %></li>-->
-			<li><%= mail_to "luke@tracktrack.co", "Feedback", subject: "Feedback" %></li>
-		</ul>
-		<ul class="middle">
+			<li><%= mail_to "hello@tracktrack.co", "Feedback", subject: "Feedback" %></li>
 			<li><%= link_to "Diet", diet_path, data: { keybinding: "d" } %></li>
 			<li><%= link_to "Cardio", cardio_path, data: { keybinding: "c" } %></li>
+		</ul>
+		<ul class="middle">
 		</ul>
 		<ul class="right">
 			<li class="coin">

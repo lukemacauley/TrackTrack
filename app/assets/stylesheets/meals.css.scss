@@ -91,13 +91,19 @@ $form-width: 425px !default;
   width: 32.3%;
   float: left;
   margin-bottom: 16px;
-  &.middle {
-    margin-left: 7px;
-  }
-  &.right {
-    float: right;
+    &.middle {
+      margin-left: 7px;
+    }
+    &.right {
+      float: right;
+    }
   }
 }
+
+.meal {
+  .btn {
+    margin-top: 16px;
+  }
 }
 
 .shortcuts-box {
