@@ -82,5 +82,5 @@ Tracktrack::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # For Devise - Change to actual host
-  config.action_mailer.default_url_options = { :host => 'track-track.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'tracktrack.co' }
 end
