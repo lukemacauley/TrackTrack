@@ -1,7 +1,10 @@
 <header>
 	<nav>
 		<ul>
-			<li><%= link_to image_tag('logo.png'), root_path, class: "logo", data: { keybinding: 'h' } %></li>
+			<!--<li><%# link_to image_tag('logo.png'), root_path, class: "logo", data: { keybinding: 'h' } %></li>-->
+			<li>
+				<%= link_to "<span class='first'>Track</span><span class='last'>Track</span>".html_safe, root_path, data: { keybinding: 'h' } %>
+			</li>
 		<% if user_signed_in? %>
 		</ul>
 		<ul class="profile">

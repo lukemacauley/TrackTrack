@@ -1,8 +1,8 @@
 Tracktrack::Application.routes.draw do
 
-  constraints subdomain: 'www' do
-    get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
-  end
+  #constraints subdomain: 'www' do
+  #  get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
+  #end
 
   devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'signout', confirmation: 'verification', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
   resources :meals, only: :create

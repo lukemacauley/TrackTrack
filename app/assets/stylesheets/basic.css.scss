@@ -124,6 +124,19 @@ small {
   font-size: 0.8em;
 }
 
+.first, .last {
+  font-size: 1.6em;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: $ui-base-color;
+  &:hover {
+    color: $ui-base-color;
+  }
+}
+.last {
+  font-weight: 400;
+}
+
 // Header CSS -------------------------------------------------------------------
 
 header {
@@ -343,7 +356,7 @@ footer {
   position: relative;
   padding: 0.55em 1em 0.5em;
   margin: 0;
-  font: 500 12px/1.5em $ui-font-family;
+  font: 700 12px/1.5em $ui-font-family;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -623,7 +636,7 @@ textarea {
     #{headers(all)} {
       padding: 0;
       margin: 0;
-      font: 500 16px $ui-font-family;
+      font: 700 18px $ui-font-family;
       text-transform: uppercase;
     }
 
@@ -635,7 +648,7 @@ textarea {
       .btn {
         color: $ui-base-color-opposite;
         border-color: $ui-base-color-opposite;
-
+        font: 700 18px $ui-font-family;
         &:hover {
           color: $ui-base-color;
           background: $ui-base-color-opposite;
@@ -654,7 +667,7 @@ textarea {
     .actions {
       .btn {
         height: 30px;
-        font: 500 12px $ui-font-family;
+        font: 700 12px $ui-font-family;
         vertical-align: middle;
       }
     }
