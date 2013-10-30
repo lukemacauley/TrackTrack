@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
-  def diet
+  def cutting
+  end
+
+  def bulking
   end
 
   def diet

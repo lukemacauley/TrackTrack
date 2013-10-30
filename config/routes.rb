@@ -22,7 +22,8 @@ Tracktrack::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
       get "cardio" => "pages#cardio"
-      get "diet" => "pages#diet"
+      get "cutting" => "pages#cutting"
+      get "bulking" => "pages#bulking"
       get "help" => "pages#help"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

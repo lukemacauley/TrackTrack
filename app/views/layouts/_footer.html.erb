@@ -2,17 +2,18 @@
 	<footer>
 		<ul class="left">
 			<!--<li><%# "&#169; #{Time.now.year} TrackTrack".html_safe %></li>-->
-			<li><%= mail_to "hello@tracktrack.co", "Feedback", subject: "Feedback" %></li>
-			<li><%= link_to "Diet", diet_path, data: { keybinding: "d" } %></li>
-			<li><%= link_to "Cardio", cardio_path, data: { keybinding: "c" } %></li>
+			<li><%= link_to "Cutting", cutting_path %></li>
+			<li><%= link_to "Bulking", bulking_path %></li>
+			<li><%= link_to "Cardio", cardio_path %></li>
 		</ul>
 		<ul class="middle">
 		</ul>
 		<ul class="right">
-			<li class="coin">
+			<!--<li class="coin">
 				<span class="heads"><%# link_to "Site Credit", "http://macauley.co" %></span>
 				<span class="tails"><%# link_to "Macauley", "http://macauley.co" %></span>
-			</li>
+			</li>-->
+			<li><%= mail_to "hello@tracktrack.co", "Feedback", subject: "Feedback" %></li>
 		</ul>
 	</footer>
 <% end %>

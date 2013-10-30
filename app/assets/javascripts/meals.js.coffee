@@ -14,8 +14,8 @@ ready = ->
 	})
 
 	$('.shortcuts').click ->
-		$('.shortcuts-box').fadeIn(500)
 		$('.body-fade').fadeIn(300)
+		$('.shortcuts-box').fadeIn(500)
 
 	$('.body-fade, .close').click ->
 		$('.body-fade').fadeOut(500)

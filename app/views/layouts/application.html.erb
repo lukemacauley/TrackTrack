@@ -4,11 +4,13 @@
   <title>TrackTrack / <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="//use.typekit.com/glv8hpo.js"></script>
+  <script src="//use.typekit.net/ilt2pfw.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="body-fade"></div>
 
 <%= render 'layouts/header' unless @no_header %>
 
