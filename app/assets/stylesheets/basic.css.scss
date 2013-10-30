@@ -16,7 +16,7 @@ $ui-base-color-hover: #838383 !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
-$ui-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$ui-font-family: "futura-pt", sans-serif !default;
 
 $ui-button-height: 35px !default;
 $ui-input-height: $ui-button-height !default;
@@ -34,16 +34,17 @@ html {
 }
 
 body {
-  font-size: 1.6em;
+  font-size: 1.8em;
   background-color: $ui-base-color-opposite;
   color: $ui-base-color;
+  font-weight: 500;
 }
 
 h1 {
   padding: 15px 0;
   font-size: 40px;
   letter-spacing: -2px;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -51,23 +52,25 @@ h2 {
   text-align: center;
   letter-spacing: -1px;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 500;
   text-align: center;
+  letter-spacing: -1px;
 }
 
 h4 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 p {
   line-height: 1.4em;
   padding: .3em;
+  font-weight: 500;
 }
 
 a {
@@ -114,7 +117,7 @@ blockquote {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 small {
@@ -140,7 +143,7 @@ header {
       padding-right: 0;
       display: inline-table;
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 500;
       li {
         display: inline-block;
         margin-left: 50px;
@@ -161,12 +164,14 @@ header {
     padding-right: 0;
     .arrow {
       position: absolute;
-      top: -6px;
+      top: -2px;
       right: 27px;
     }
     li {
       text-align: right;
       margin-right: 50px;
+      font-size: 1.2em;
+      letter-spacing: -1px;
       a {
         &:hover {
           color: $ui-base-color;
@@ -176,13 +181,13 @@ header {
         display: none;
         position: relative;
         border: $ui-border-width solid $ui-base-color;
-        padding: 12px 16px;
+        padding: 12px 0 12px 18px;
         margin-top: 16px;
         background-color: #fff;
         hr {
           position: relative;
-          margin: 12px -16px;
-          width: 139px;
+          margin: 12px -18px;
+          width: 128px;
         }
         &:after, &:before {
           bottom: 100%;
@@ -210,10 +215,11 @@ header {
         li {
           width: auto;
           display: block;
-          font-size: 16px;
+          font-size: 0.9em;
           margin: 0 auto;
           text-align: left;
           background: none;
+          letter-spacing: 0;
           a {
             color: $ui-base-color;
             &:hover {
@@ -250,7 +256,7 @@ header {
     background-color: $ui-base-color;
     padding: 10px 0;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     color: $ui-base-color-opposite;
     z-index: 15;
   }
@@ -307,9 +313,9 @@ footer {
       li {
         display: inline-block;
         margin: auto 15px;
-        font-size: 0.8em;
+        font-size: 0.9em;
         color: $ui-base-color-hover;
-        font-weight: bold;
+        font-weight: 500;
         a {
           color: $ui-base-color-hover;
           &:hover {
@@ -338,7 +344,7 @@ footer {
   position: relative;
   padding: 0.55em 1em 0.5em;
   margin: 0;
-  font: bold 12px/1.5em $ui-font-family;
+  font: 500 12px/1.5em $ui-font-family;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -425,7 +431,7 @@ table {
       th
       {
         padding: 10px 8px;
-        font-weight: bold;
+        font-weight: 500;
         text-transform: uppercase;
         background: $ui-base-color;
         color: $ui-base-color-opposite;
@@ -451,6 +457,7 @@ table {
         border-left: $ui-border-width solid $ui-base-color;
         border-top: $ui-border-width solid $ui-base-color;
         text-align: center;
+        font-weight: 500;
 
         &:first-child
         {
@@ -489,7 +496,7 @@ table {
       td
       {
         padding: 10px 8px;
-        font-weight: bold;
+        font-weight: 500;
         background: $ui-base-color;
         color: $ui-base-color-opposite;
         border-bottom: $ui-border-width solid $ui-base-color-opposite;
@@ -617,7 +624,7 @@ textarea {
     #{headers(all)} {
       padding: 0;
       margin: 0;
-      font: bold 16px $ui-font-family;
+      font: 500 16px $ui-font-family;
       text-transform: uppercase;
     }
 
@@ -648,7 +655,7 @@ textarea {
     .actions {
       .btn {
         height: 30px;
-        font: bold 12px $ui-font-family;
+        font: 500 12px $ui-font-family;
         vertical-align: middle;
       }
     }
@@ -665,7 +672,7 @@ textarea {
 {
   display: inline-block;
   padding: .15em .4em;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
   background: $ui-base-color-opposite;
   color: $ui-base-color;

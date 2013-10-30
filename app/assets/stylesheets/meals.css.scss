@@ -16,7 +16,7 @@ $ui-base-color-hover: #838383 !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
-$ui-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$ui-font-family: "futura-pt", sans-serif !default;
 
 $ui-button-height: 35px !default;
 $ui-input-height: $ui-button-height !default;
@@ -78,7 +78,7 @@ $form-width: 425px !default;
   }
   div {
   	padding-top: 16px;
-  	font-weight: bold;
+  	font-weight: 500;
   	&:first-child {
   		padding-top: 0;
   	}
