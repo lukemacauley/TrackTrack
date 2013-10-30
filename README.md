@@ -16,6 +16,7 @@ The next level of tracking nutrition.
 
 - ~~Add domain via DNSimple.~~
 - ~~Add Typekit.~~
+- Customise 404 pages
 - Upgrade to two Heroku dynos.
 - Add mailers.
 - Add stripe integration via a separate controller (priced at £5/month), and give 30 day free trial via tracking the signup date (current_user.created_at) and checking to see if it's been longer than 30 days. If so, simply show/redirect to the payment link. 
