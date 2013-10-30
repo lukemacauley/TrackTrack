@@ -33,8 +33,8 @@ Tracktrack::Application.routes.draw do
       get 'add' => 'meals#new', as: :new_meal
       get 'meal-:id/edit' => 'meals#edit', as: :edit_meal
       get 'meal-:id' => 'meals#show', as: :meal
-      patch ':id' => 'meals#update'
-      put ':id' => 'meals#update'
+      patch 'meal-:id' => 'meals#update'
+      put 'meal-:id' => 'meals#update'
       delete 'meal-:id' => 'meals#destroy'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):

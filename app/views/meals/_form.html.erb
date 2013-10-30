@@ -31,6 +31,9 @@
     <%= f.label :fats %> (g)<br>
     <%= f.text_field :fats %>
   </div>
+  <div class="field actions">
+    <%= f.check_box :favourite, class: "favourites" %> Add to Favourites?
+  </div>
   <div class="actions">
     <%= f.submit "Save", class: "btn btn-large" %>
     <% if current_page?(edit_meal_path(@meal)) %>

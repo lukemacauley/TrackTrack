@@ -25,8 +25,12 @@
     <tbody>
       <% @favourites.each do |meal| %>
         <tr class="favourites">
-          <td><%= link_to meal.name, edit_meal_path(meal) %></td>
-          <td><%= "#{meal.calories}kcal" %></td>
+          <% if meal.description.blank? %>
+            <td><%= link_to meal.name, edit_meal_path(meal) %></td>
+          <% else %>
+            <td><%= link_to meal.name, edit_meal_path(meal), class: "tooltip", title: "#{meal.description}" %></td>
+          <% end %>
+          <td><%= "#{(meal.protein * 4) + (meal.carbohydrates * 4) + (meal.fats * 9)} kcal" %></td>
           <td><%= "#{meal.protein}g" %></td>
           <td><%= "#{meal.carbohydrates}g" %></td>
           <td><%= "#{meal.fats}g" %></td>
