@@ -232,9 +232,8 @@ header {
           text-align: left;
           background: none;
           letter-spacing: 0;
-          color: $ui-second-color;
           a {
-            color: $ui-base-color;
+            color: $ui-second-color;
             &:hover {
               color: $ui-base-color-hover;
             }
