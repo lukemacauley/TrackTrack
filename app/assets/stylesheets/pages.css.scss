@@ -17,7 +17,7 @@ $legacy-support-for-mozilla: false;
 $ui-base-color: #2b2b2b !default;
 $ui-base-color-opposite: #fff !default;
 $ui-base-color-hover: #838383 !default;
-$ui-second-color: #4d4d4d !default;
+$ui-second-color: #3c3c3c !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
@@ -41,16 +41,16 @@ section.pages {
 	h2, h3, h4, h5, h6 {
 		text-align: left;
 	}
-	p {
-		padding: 0;
-		line-height: 1.5em;
-		color: $ui-second-color;
+	h2 {
+		font-size: 25px;
+	}
+	a {
+		border-bottom: 1px solid #ddd;
 	}
 	li {
 		list-style: disc;
-		//list-style-position: inside;
 		padding-left: 17px;
-		line-height: 1.4em;
+		line-height: 1.5em;
 		color: $ui-second-color;
 	}
 	ul {
