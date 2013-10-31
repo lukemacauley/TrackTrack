@@ -193,13 +193,12 @@ header {
         display: none;
         position: relative;
         border: $ui-border-width solid $ui-base-color;
-        padding: 12px 0 12px 18px;
+        padding: 12px 18px;
         margin-top: 16px;
         background-color: #fff;
         hr {
           position: relative;
           margin: 12px -18px;
-          width: 128px;
         }
         &:after, &:before {
           bottom: 100%;
