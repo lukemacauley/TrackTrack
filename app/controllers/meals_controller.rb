@@ -14,8 +14,6 @@ class MealsController < ApplicationController
         @fat_grams = current_user.fat_percentage * current_user.bmr / 900
         @carb_grams = (carbs_calculator + @todays_meals.sum(:carbohydrates))
       end
-    else
-      @no_header = true
     end
   end
 

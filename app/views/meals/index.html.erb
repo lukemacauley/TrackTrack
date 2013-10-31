@@ -10,15 +10,13 @@
 
   <section class="hello">
 
-    <div class="logo"><%= link_to "<span class='first'>Track</span><span class='last'>Track</span>".html_safe, root_path, data: { keybinding: 'h' } %></div>
-
     <h1 class="fadeInUp">The next level of tracking nutrition.</h1>
 
     <h2 class="fadeIn">The development of character which<br>speaks to the ability to follow through.</h2>
 
     <div>
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-large fadeIn" %>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-large fadeIn" %>
+      <%= link_to "Create Free Account", new_user_registration_path, class: "btn btn-large fadeIn" %>
+      <p>No credit card required / No commitment</p>
     </div>
 
   </section>
