@@ -29,6 +29,7 @@ gem 'newrelic_rpm'
 gem "compass-rails", "~> 2.0.alpha.0"
 gem 'mousetrap-rails'
 gem "figaro"
+gem "devise-async"
 
 group :doc do
   gem 'sdoc', require: false
