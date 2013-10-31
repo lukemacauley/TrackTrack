@@ -28,6 +28,7 @@ gem "simple_calendar", "~> 0.1.9"
 gem 'newrelic_rpm'
 gem "compass-rails", "~> 2.0.alpha.0"
 gem 'mousetrap-rails'
+gem "figaro"
 
 group :doc do
   gem 'sdoc', require: false
