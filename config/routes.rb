@@ -30,6 +30,11 @@ Tracktrack::Application.routes.draw do
       get "bulking" => "pages#bulking"
       get "help" => "pages#help"
       get "pricing" => "pages#pricing"
+      get "about" => 'pages#about'
+
+      #.each do |action|
+      #  get "#{action}" => "pages##{action}"
+      #end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
