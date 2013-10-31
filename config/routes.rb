@@ -4,7 +4,7 @@ Tracktrack::Application.routes.draw do
   #  get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
   #end
 
-  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'signout', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
+  devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'signout', confirmation: 'verification', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
   resources :meals, only: :create
 
   get 'yesterday' => 'meals#yesterday'
