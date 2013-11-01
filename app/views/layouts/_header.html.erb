@@ -9,7 +9,7 @@
 		</ul>
 		<ul class="profile">
 			<span class="arrow"><%= image_tag("arrow.png") %></span>
-			<li><%= link_to current_user.name, root_path %>
+			<li><%= link_to current_user.name, root_path, class: "name" %>
 				<ul class="profile_links">
 					<li><%= link_to "Edit Profile", profile_path, data: { keybinding: "p" } %></li>
 					<li><%= link_to "Favourites", favourites_path, data: { keybinding: "f" } %></li>

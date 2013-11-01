@@ -14,6 +14,8 @@ $ui-base-color: #2b2b2b !default;
 $ui-base-color-opposite: #fff !default;
 $ui-base-color-hover: #838383 !default;
 $ui-second-color: #3c3c3c !default;
+$ui-red-color: rgba(240,43,19,0.9) !default;
+$ui-red-color-hover: rgba(180,32,14,0.9) !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
@@ -85,7 +87,7 @@ a {
   -o-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
   transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
   &:hover {
-    color: $ui-base-color-hover;
+    color: $ui-red-color;
   }
   &.disabled {
     opacity: .3;
@@ -186,6 +188,11 @@ header {
       font-weight: 600;
       a {
         &:hover {
+          color: $ui-red-color;
+        }
+      }
+      .name {
+        &:hover {
           color: $ui-base-color;
         }
       }
@@ -196,6 +203,9 @@ header {
         padding: 12px 18px;
         margin-top: 16px;
         background-color: #fff;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
         hr {
           position: relative;
           margin: 12px -18px;
@@ -234,7 +244,7 @@ header {
           a {
             color: $ui-second-color;
             &:hover {
-              color: $ui-base-color-hover;
+              color: $ui-red-color;
             }
           }
         }
@@ -267,17 +277,26 @@ header {
     margin: 0 auto;
     width: $form-width;
     text-align: center;
-    background-color: $ui-base-color;
+    background-color: $ui-red-color;
     padding: 10px 0;
     font-weight: 600;
     color: $ui-base-color-opposite;
     z-index: 15;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
   }
 }
 
 #error_explanation {
-  background-color: $ui-base-color;
+  background-color: $ui-red-color;
   color: $ui-base-color-opposite;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   padding: 20px;
   z-index: 15;
   h2, h4 {
@@ -364,9 +383,13 @@ footer {
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
-  border: $ui-border-width solid $ui-base-color;
-  color: $ui-base-color;
-  background: transparent;
+  border: $ui-border-width solid $ui-red-color;
+  color: $ui-base-color-opposite;
+  background-color: $ui-red-color;
+  background-clip: padding-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   transition-property: all;
   transition-duration: .5s;
   -webkit-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
@@ -375,13 +398,14 @@ footer {
   -o-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
   transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
   @include box-sizing(border-box);
-  @include border-radius(0);
+  @include border-radius(3);
   @include appearance(none);
 
   &:hover,
   &.active {
-    background: $ui-base-color;
     color: $ui-base-color-opposite;
+    background-color: $ui-red-color-hover;
+    border-color: $ui-red-color-hover;
   }
 
   &:focus {
@@ -395,8 +419,8 @@ footer {
     cursor: default;
 
     &:hover {
-      background: inherit;
-      color: inherit;
+      background: $ui-red-color;
+      color: $ui-base-color-opposite;
     }
   }
 
@@ -436,7 +460,9 @@ table {
   margin: 20px 0 20px;
   border-collapse: separate;
   border: $ui-border-width solid $ui-base-color;
-
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   thead
   {
     tr
@@ -526,6 +552,7 @@ table {
         }
         &.remaining {
           border-bottom: none;
+          color: $ui-red-color;
         }
       }
 
@@ -576,10 +603,15 @@ $inputs: 'select,
   background: $ui-base-color-opposite;
   color: $ui-base-color;
   border: $ui-border-width solid $ui-base-color;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   @include box-sizing(border-box);
-  @include border-radius(0);
+  @include border-radius(3);
   @include appearance(none);
-
+  &:focus {
+    border-color: $ui-red-color;
+  }
   &[disabled]
   {
     opacity: .35;
@@ -596,7 +628,7 @@ select
 {
   width: 100%;
   //height: 53px;
-  @include border-radius(0);
+  @include border-radius(3);
   @include box-sizing(border-box);
 
   /* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */
@@ -610,6 +642,13 @@ select
 
 textarea {
   max-width: 100%;
+}
+
+input[type="submit"] {
+  font-weight: inherit;
+  &:hover {
+    font-weight: inherit;
+  }
 }
 
 // Responsive
@@ -629,6 +668,9 @@ textarea {
   margin-bottom: 20px;
   background: $ui-base-color-opposite;
   border: $ui-border-width solid $ui-base-color;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 
   .box-head {
     min-height: 20px;
@@ -650,12 +692,8 @@ textarea {
       right: 2px;
 
       .btn {
-        color: $ui-base-color-opposite;
-        border-color: $ui-base-color-opposite;
         font: 700 18px $ui-font-family;
         &:hover {
-          color: $ui-base-color;
-          background: $ui-base-color-opposite;
         }
       }
     }
