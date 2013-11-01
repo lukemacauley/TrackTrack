@@ -4,9 +4,11 @@
 
 ready = ->
 
+	$(document).on 'page:before-change', ->
+  	$('<%= image_path('loading.gif') %>').show()
+
 	$(document).on 'page:fetch', ->
   	$('#content').fadeOut 'fast'
-  	$('<%= image_path('loading.gif') %>').show()
 
 	$(document).on 'page:restore', ->
 	  $('#content').fadeIn 'fast'
