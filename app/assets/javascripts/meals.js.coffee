@@ -5,10 +5,10 @@
 ready = ->
 
 	$(document).on 'page:fetch', ->
-  	$('#content').fadeOut 'slow'
+  	$('#content').fadeOut 'fast'
 
 	$(document).on 'page:restore', ->
-	  $('#content').fadeIn 'slow'
+	  $('#content').fadeIn 'fast'
 
 	$('.sidebar, body, footer, header').addClass("transition")
 
