@@ -1,7 +1,7 @@
 Tracktrack::Application.routes.draw do
 
   constraints subdomain: 'track-track' do
-    get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
+    get ':any', to: redirect(subdomain: nil, path: 'tracktrack.co'), any: /.*/
   end
 
   devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'signout', unlock: 'unblock', registration: '', sign_up: 'signup', registrations: '' }
