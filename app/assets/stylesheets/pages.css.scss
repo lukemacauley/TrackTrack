@@ -1,7 +1,3 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 // --- compass: settings ----------------------------------------------------------------------------------------------
 
 $legacy-support-for-ie: false;
@@ -18,6 +14,8 @@ $ui-base-color: #2b2b2b !default;
 $ui-base-color-opposite: #fff !default;
 $ui-base-color-hover: #838383 !default;
 $ui-second-color: #3c3c3c !default;
+$ui-red-color: rgba(240,43,19,0.9) !default;
+$ui-red-color-hover: rgba(180,32,14,0.9) !default;
 $ui-border-width: 2px !default;
 
 $ui-font-color: $ui-base-color !default;
@@ -58,7 +56,13 @@ section.pages {
 	}
 	blockquote {
 		p {
-			color: $ui-base-color;
+			color: $ui-red-color;
+		}
+	}
+	a {
+		color: $ui-second-color;
+		&:hover {
+			color: $ui-red-color;
 		}
 	}
 }

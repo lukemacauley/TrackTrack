@@ -111,7 +111,7 @@ hr {
 }
 
 blockquote {
-  border-left: 6px solid $ui-base-color;
+  border-left: 6px solid $ui-red-color;
   margin-left: 0;
   padding-left: 24px;
   font-style: italic;
@@ -611,6 +611,7 @@ $inputs: 'select,
   @include appearance(none);
   &:focus {
     border-color: $ui-red-color;
+    color: $ui-red-color;
   }
   &[disabled]
   {
