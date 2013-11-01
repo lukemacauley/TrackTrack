@@ -153,10 +153,16 @@ $form-width: 425px !default;
   display: none;
 }
 
-.blur {
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
+.logo {
+  position: relative;
+}
+
+.transition {
+  transition-property: all;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -moz-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -ms-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  -o-transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
+  transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
 }

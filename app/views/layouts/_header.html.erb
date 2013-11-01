@@ -1,29 +1,17 @@
 <header>
 	<nav>
 		<ul>
-			<!--<li><%# link_to image_tag('logo.png'), root_path, class: "logo", data: { keybinding: 'h' } %></li>-->
 			<li>
-				<%= link_to "<span class='first'>Track</span><span class='last'>Track</span>".html_safe, root_path, data: { keybinding: 'h' } %>
+				<%= link_to "<span class='first'>Track</span><span class='last'>Track</span>".html_safe, root_path, data: { keybinding: 'h' }, class: "logo" %>
 			</li>
-		<% if user_signed_in? %>
 		</ul>
+		<% if user_signed_in? %>
 		<ul class="profile">
-			<span class="arrow"><%= image_tag("arrow.png") %></span>
-			<li><%= link_to current_user.name, root_path, class: "name" %>
-				<ul class="profile_links">
-					<li><%= link_to "Edit Profile", profile_path, data: { keybinding: "p" } %></li>
-					<li><%= link_to "Favourites", favourites_path, data: { keybinding: "f" } %></li>
-					<li><hr></li>
-					<li><%= link_to "Help", help_path %></li>
-					<li><%= link_to "Shortcuts", 'javascript:void(0)', class: "shortcuts" %></li>
-					<li><hr></li>
-					<li><%= link_to "Settings", settings_path %></li>
-					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-				</ul>
+			<li>
+				<%= link_to current_user.name, 'javascript:void(0)', class: "name" %>
 			</li>
 		</ul>
 		<% else %>
-		</ul>
 		<ul class="login">
 			<li><%= link_to "About", about_path %></li>
 			<li><%= link_to "Pricing", pricing_path %></li>

@@ -4,6 +4,16 @@
 
 ready = ->
 
+	$('.sidebar, body, footer, header').addClass("transition")
+
+	$('.name').click ->
+		$('.sidebar').css("right" : "0")
+		$('.body-fade').fadeIn(300)
+		$('footer').css("left" : "-245px")
+		$('body').css("left" : "-245px")
+		$('.logo').css("left" : "-245px")
+
+
 	$('textarea').autoGrow()
 
 	$('.alert').delay(2000).fadeOut(500)
@@ -17,9 +27,13 @@ ready = ->
 		$('.body-fade').fadeIn(300)
 		$('.shortcuts-box').fadeIn(500)
 
-	$('.body-fade, .close').click ->
+	$('.body-fade, .close, .name-link').click ->
 		$('.body-fade').fadeOut(500)
 		$('.shortcuts-box').fadeOut(300)
+		$('.sidebar').css("right" : "-245px")
+		$('body').css("left" : "0")
+		$('footer').css("left" : "0")
+		$('.logo').css("left" : "0")
 	
 	$('.disabled').click -> return false
 

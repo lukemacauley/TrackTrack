@@ -41,6 +41,7 @@ body {
   background-color: $ui-base-color-opposite;
   color: $ui-base-color;
   font-weight: 400;
+  position: relative;
 }
 
 h1 {
@@ -175,11 +176,11 @@ header {
     float: right;
     padding-left: 0;
     padding-right: 0;
-    .arrow {
-      position: absolute;
-      top: -4px;
-      right: 27px;
-    }
+    //.arrow {
+    //  position: absolute;
+    //  top: -4px;
+    //  right: 27px;
+    //}
     li {
       text-align: right;
       margin-right: 50px;
@@ -196,62 +197,6 @@ header {
           color: $ui-base-color;
         }
       }
-      ul.profile_links {
-        display: none;
-        position: relative;
-        border: $ui-border-width solid $ui-base-color;
-        padding: 12px 18px;
-        margin-top: 16px;
-        background-color: #fff;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        hr {
-          position: relative;
-          margin: 12px -18px;
-        }
-        &:after, &:before {
-          bottom: 100%;
-          border: solid transparent;
-          content: " ";
-          height: 0;
-          width: 0;
-          position: absolute;
-          pointer-events: none;
-        }
-        &:after {
-          border-color: rgba(255, 255, 255, 0);
-          border-bottom-color: $ui-base-color-opposite;
-          border-width: 10px;
-          left: 50%;
-          margin-left: -10px;
-        }
-        &:before {
-          border-color: rgba(29, 29, 29, 0);
-          border-bottom-color: $ui-base-color;
-          border-width: 13px;
-          left: 50%;
-          margin-left: -13px;
-        }
-        li {
-          width: auto;
-          display: block;
-          font-size: 0.9em;
-          margin: 0 auto;
-          text-align: left;
-          background: none;
-          letter-spacing: 0;
-          a {
-            color: $ui-second-color;
-            &:hover {
-              color: $ui-red-color;
-            }
-          }
-        }
-      }
-      &:hover > ul {
-        display: block;
-      }
     }
   }
   ul.login {
@@ -263,6 +208,53 @@ header {
       letter-spacing: -1px;
       &:last-child {
         margin-right: 50px;
+      }
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  right: -245px;
+  height: 100%;
+  width: 245px;
+  background-color: #f1f1f1;
+  z-index: 100;
+  ul.profile_links {
+    width: 100%;
+    padding-left: 0;
+    hr {
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      display: block;
+      font-size: 1em;
+      text-align: center;
+      letter-spacing: 0;
+      margin-left: 0;
+      &:first-child {
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: -1px;
+        position: relative;
+        right: 1px;
+        top: 2px;
+        a {
+          &:hover {
+            color: $ui-base-color;
+          }
+        }
+      }
+      &:nth-child(2) {
+        margin-top: 25px;
+      }
+      a {
+        color: $ui-second-color;
+        &:hover {
+          color: $ui-red-color;
+        }
       }
     }
   }
