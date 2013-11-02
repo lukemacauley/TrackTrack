@@ -16,7 +16,7 @@
 	<div class="body-fade"></div>
 	<div class="sidebar">
 		<ul class="profile_links">
-			<li><%= link_to current_user.name, 'javascript:void(0)', class: "name-link" %></li>
+			<li><%= link_to "#{current_user.weight} lbs", 'javascript:void(0)', class: "name-link" %></li>
 			<li><%= link_to "Edit Profile", profile_path, data: { keybinding: "p" } %></li>
 			<li><%= link_to "Favourites", favourites_path, data: { keybinding: "f" } %></li>
 			<li><hr></li>
@@ -25,6 +25,7 @@
 			<li><hr></li>
 			<li><%= link_to "Settings", settings_path %></li>
 			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+			<li><%= "&copy #{Time.now.year}".html_safe %></li>
 		</ul>
 	</div>
 <% end %>

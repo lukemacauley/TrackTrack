@@ -176,11 +176,6 @@ header {
     float: right;
     padding-left: 0;
     padding-right: 0;
-    //.arrow {
-    //  position: absolute;
-    //  top: -4px;
-    //  right: 27px;
-    //}
     li {
       text-align: right;
       margin-right: 50px;
@@ -190,11 +185,6 @@ header {
       a {
         &:hover {
           color: $ui-red-color;
-        }
-      }
-      .name {
-        &:hover {
-          color: $ui-base-color;
         }
       }
     }
@@ -241,11 +231,12 @@ header {
         position: relative;
         right: 1px;
         top: 2px;
-        a {
-          &:hover {
-            color: $ui-base-color;
-          }
-        }
+      }
+      &:last-child {
+        font-size: 0.9em;
+        position: absolute;
+        bottom: 0.8em;
+        color: $ui-base-color-hover;
       }
       &:nth-child(2) {
         margin-top: 25px;
@@ -348,18 +339,19 @@ footer {
         }
       }
     }
-    .tails {
+  }
+
+.tails {
+display: none;
+}
+
+.coin:hover .tails, .coin:active .tails {
+  display: inline;
+}
+
+.coin:hover .heads, .coin:active .heads {
   display: none;
-  }
-  
-  .coin:hover .tails, .coin:active .tails {
-    display: inline;
-  }
-  
-  .coin:hover .heads, .coin:active .heads {
-    display: none;
-  }
-  }
+}
 
 // --- component: button -----------------------------------------------------------------------------------------------
 
@@ -409,10 +401,11 @@ footer {
   &.disabled {
     opacity: .3;
     cursor: default;
-
     &:hover {
       background: $ui-red-color;
+      border-color: $ui-red-color;
       color: $ui-base-color-opposite;
+      background-clip: padding-box;
     }
   }
 

@@ -4,14 +4,11 @@
 
 ready = ->
 
-	$(document).on 'page:before-change', ->
-  	$('<%= image_path('loading.gif') %>').show()
-
 	$(document).on 'page:fetch', ->
-  	$('#content').fadeOut 'fast'
+  	$('body').fadeOut 'fast'
 
 	$(document).on 'page:restore', ->
-	  $('#content').fadeIn 'fast'
+	  $('body').fadeIn 'fast'
 
 	$('.sidebar, body, footer, header').addClass("transition")
 
