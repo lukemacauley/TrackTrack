@@ -4,11 +4,11 @@
 
 ready = ->
 
-	$(document).on 'page:fetch', ->
-  	$('body').fadeOut 'fast'
+	#$(document).on 'page:fetch', ->
+  #	$('body').fadeOut 'fast'
 
-	$(document).on 'page:restore', ->
-	  $('body').fadeIn 'fast'
+	#$(document).on 'page:restore', ->
+	#  $('body').fadeIn 'fast'
 
 	$(document).on 'page:fetch', -> 
 		NProgress.start()
