@@ -5,7 +5,7 @@
 ready = ->
 
 	$(document).on 'page:fetch', -> 
-		$(this).addClass("blur")
+		$('body').addClass("blur")
 		NProgress.start()
 		
 
