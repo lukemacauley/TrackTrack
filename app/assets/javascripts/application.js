@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require mousetrap
 //= require jquery.ui.all
+//= require mousetrap
+//= require nprogress
 //= require turbolinks
 //= require_tree .
 //= require autogrow

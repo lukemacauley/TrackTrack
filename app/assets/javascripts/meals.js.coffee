@@ -10,6 +10,17 @@ ready = ->
 	$(document).on 'page:restore', ->
 	  $('body').fadeIn 'fast'
 
+	$(document).on 'page:fetch', -> 
+		NProgress.start()
+
+	$(document).on "page:change", ->
+  	NProgress.done()
+
+	$(document).on 'page:restore', ->
+		NProgress.remove()
+
+	NProgress.configure showSpinner: false
+
 	$('.sidebar, body, footer, header').addClass("transition")
 
 	$('.name').click ->
