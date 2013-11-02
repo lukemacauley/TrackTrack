@@ -4,14 +4,10 @@
 
 ready = ->
 
-	#$(document).on 'page:fetch', ->
-  #	$('body').fadeOut 'fast'
-
-	#$(document).on 'page:restore', ->
-	#  $('body').fadeIn 'fast'
-
 	$(document).on 'page:fetch', -> 
+		$(this).addClass("blur")
 		NProgress.start()
+		
 
 	$(document).on "page:change", ->
   	NProgress.done()
