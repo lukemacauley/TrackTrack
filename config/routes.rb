@@ -26,7 +26,7 @@ Tracktrack::Application.routes.draw do
       get "bulking" => "pages#bulking"
       get "help" => "pages#help"
       get "pricing" => "pages#pricing"
-      get "about" => 'pages#about'
+      get "how-it-works" => "pages#about", as: :about
 
       #.each do |action|
       #  get "#{action}" => "pages##{action}"
