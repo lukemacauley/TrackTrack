@@ -12,6 +12,12 @@
 
 <div id="container">
 
+<%= render 'layouts/header' unless @no_header %>
+
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+
 <% if user_signed_in? %>
 	<div class="body-fade"></div>
 	<div class="sidebar">
@@ -29,12 +35,6 @@
 		</ul>
 	</div>
 <% end %>
-
-<%= render 'layouts/header' unless @no_header %>
-
-<%= yield %>
-
-<%= render 'layouts/footer' %>
 
 </div>
 

@@ -9,7 +9,6 @@ ready = ->
 		$('#nprogress').removeClass("blur")
 		NProgress.start()
 		
-
 	$(document).on "page:change", ->
   	NProgress.done()
 
@@ -27,18 +26,7 @@ ready = ->
 		$('body').css("left" : "-245px")
 		$('.logo').css("left" : "-245px")
 
-
-	$('textarea').autoGrow()
-
-	$('.alert').delay(2000).fadeOut(500)
-
-	$('.tooltip').tooltipster({ 
-		 animation: 'fade'
-		 maxWidth: 150
-	})
-
 	$('.shortcuts').click ->
-		$('.body-fade').fadeIn(300)
 		$('.shortcuts-box').fadeIn(500)
 
 	$('.body-fade, .close').click ->
@@ -48,6 +36,15 @@ ready = ->
 		$('body').css("left" : "0")
 		$('footer').css("left" : "0")
 		$('.logo').css("left" : "0")
+
+	$('textarea').autoGrow()
+
+	$('.alert').delay(2000).fadeOut(500)
+
+	$('.tooltip').tooltipster({ 
+		 animation: 'fade'
+		 maxWidth: 150
+	})
 	
 	$('.disabled').click -> return false
 
