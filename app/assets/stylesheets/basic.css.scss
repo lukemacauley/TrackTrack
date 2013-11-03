@@ -259,9 +259,10 @@ header {
   .alert {
     margin: 0 auto;
     width: $form-width;
+    height: auto;
     text-align: center;
     background-color: $ui-red-color;
-    padding: 10px 0;
+    padding: 10px 20px;
     font-weight: 600;
     color: $ui-base-color-opposite;
     z-index: 15;
@@ -610,8 +611,14 @@ $inputs: 'select,
   @include border-radius(3);
   @include appearance(none);
   &:focus {
-    border-color: $ui-red-color;
-    color: $ui-red-color;
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
   }
   &[disabled]
   {
@@ -803,27 +810,27 @@ input[type="submit"] {
 // ------ pulse --------------------------------------------------
 
 @-webkit-keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% { border-color: $ui-base-color; }
+  50% { border-color: rgba(43,43,43,0.3) }
+  100% { border-color: $ui-base-color; }
 }
 
 @-moz-keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% { border-color: $ui-base-color; }
+  50% { border-color: rgba(43,43,43,0.3) }
+  100% { border-color: $ui-base-color; }
 }
 
 @-o-keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% { border-color: $ui-base-color; }
+  50% { border-color: rgba(43,43,43,0.3) }
+  100% { border-color: $ui-base-color; }
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% { border-color: $ui-base-color; }
+  50% { border-color: rgba(43,43,43,0.3) }
+  100% { border-color: $ui-base-color; }
 }
 
 .pulse {
