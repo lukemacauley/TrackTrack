@@ -89,6 +89,7 @@ a {
   transition-timing-function: cubic-bezier(0.165,0.630,0.140,0.820);
   &:hover {
     color: $ui-red-color;
+    font-weight: 600;
   }
   &.disabled {
     opacity: .3;
@@ -163,6 +164,7 @@ header {
         margin-left: 50px;
         .logo {
           height: 10px;
+          transition-duration: .3s;
           &:hover {
             text-decoration: none;
           }
@@ -231,6 +233,11 @@ header {
         position: relative;
         right: 1px;
         top: 2px;
+        a {
+          &:hover {
+            color: $ui-red-color;
+          }
+        }
       }
       &:last-child {
         font-size: 0.9em;
@@ -244,7 +251,7 @@ header {
       a {
         color: $ui-second-color;
         &:hover {
-          color: $ui-red-color;
+          color: inherit;
         }
       }
     }
@@ -339,7 +346,7 @@ footer {
         a {
           color: $ui-base-color-hover;
           &:hover {
-            color: #cbcbcb;
+            color: $ui-red-color;
           }
         }
       }

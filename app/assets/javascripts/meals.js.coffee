@@ -17,7 +17,7 @@ ready = ->
 
 	NProgress.configure showSpinner: false
 
-	$('.sidebar, body, footer, header').addClass("transition")
+	$('.sidebar, body, footer, header, .logo').addClass("transition")
 
 	$('.name').click ->
 		$('.sidebar').css("right" : "0")
@@ -27,10 +27,10 @@ ready = ->
 		$('.logo').css("left" : "-245px")
 
 	$('.shortcuts').click ->
-		$('.shortcuts-box').fadeIn(500)
+		$('.shortcuts-box').fadeIn(300)
 
 	$('.body-fade, .close').click ->
-		$('.body-fade').fadeOut(500)
+		$('.body-fade').fadeOut(300)
 		$('.shortcuts-box').fadeOut(300)
 		$('.sidebar').css("right" : "-245px")
 		$('body').css("left" : "0")
@@ -39,7 +39,7 @@ ready = ->
 
 	$('textarea').autoGrow()
 
-	$('.alert').delay(2000).fadeOut(500)
+	$('.alert').delay(3000).fadeOut(300)
 
 	$('.tooltip').tooltipster({ 
 		 animation: 'fade'
