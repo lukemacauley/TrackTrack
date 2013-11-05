@@ -142,6 +142,10 @@ $form-width: 425px !default;
   display: none;
 }
 
+.footer-a-hover {
+  color: $ui-base-color-hover;
+}
+
 .body-fade {
   position: fixed;
   top: 0;

@@ -37,6 +37,11 @@ ready = ->
 		$('footer').css("left" : "0")
 		$('.logo').css("left" : "0")
 
+	$("footer").hover (->
+  	$('footer a').addClass "footer-a-hover"
+	), ->
+  	$('footer a').removeClass "footer-a-hover"
+
 	$('textarea').autoGrow()
 
 	$('.alert').delay(3000).fadeOut(300)
